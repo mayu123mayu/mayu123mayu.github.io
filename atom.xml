@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursiteoi.com/"/>
-  <updated>2019-12-19T09:42:58.672Z</updated>
+  <updated>2019-12-21T03:29:04.656Z</updated>
   <id>http://yoursiteoi.com/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vim的使用</title>
+    <link href="http://yoursiteoi.com/2019/12/21/vim%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursiteoi.com/2019/12/21/vim%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2019-12-21T08:12:55.036Z</published>
+    <updated>2019-12-21T03:29:04.656Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="vim的使用"><a href="#vim的使用" class="headerlink" title="vim的使用"></a>vim的使用</h1><h3 id="1-vim的三种模式"><a href="#1-vim的三种模式" class="headerlink" title="1.vim的三种模式"></a>1.vim的三种模式</h3><p><b>命令模式：</b>末尾既没有插入的字样也没有冒号</p><p>​           (在编辑模式和末行模式下按esc键可以进入命令模式)</p><p><b>编辑模式：</b>末尾会显示’—插入—‘/‘—insert—‘， 并且在编辑模式下可以对文件进行输入操作(可以编辑)</p><p>​           (在命令模式下按i就可以进入编辑模式)</p><p><b>末行模式：</b>末尾显示冒号，并且冒号后边可以输入内容</p><p>​          (在命令模式下输入冒号就可以进入末行模式)</p><h3 id="2-vim的配置"><a href="#2-vim的配置" class="headerlink" title="2.vim的配置"></a>2.vim的配置</h3><p>通过编辑<code>~/.vimrc</code>文件或者<code>/etc/vimrc</code>文件可以对vim编辑器进行相关配置</p><h3 id="3-基本操作"><a href="#3-基本操作" class="headerlink" title="3.基本操作"></a>3.基本操作</h3><h5 id="1）保存和退出"><a href="#1）保存和退出" class="headerlink" title="1）保存和退出"></a>1）保存和退出</h5><p>所有保存和退出的指令都是末行模式下执行的</p><p><b>w</b>        -   只保存(相当于ctr+s)</p><p><b>q</b>         -   直接退出(只有当前文件的内容全部保存才能直接退出，如果不保存强制退出，需要在q加!)</p><p><b>wq</b>     -  先保存再退出</p><p>注意: 强制执行在指令后加!</p><h5 id="2-光标操作"><a href="#2-光标操作" class="headerlink" title="2)光标操作"></a>2)光标操作</h5><p>所有光标操作对应的指令都是在命令模式下执行的</p><p><b>^</b>      -   直接将光标移动到行首</p><p><b>$ </b>     -    直接将光标移动到行尾</p><p><b>G</b>     -    移动到文件末尾</p><p><b>gg</b>   -    移动到文件开头</p><p><b>行号G</b>       -  移动到指定行号的位置</p><h5 id="3-文本操作"><a href="#3-文本操作" class="headerlink" title="3)文本操作"></a>3)文本操作</h5><p>以下指令前面如果没有冒号表示在命令模式下执行，有冒号的在末行模式下执行</p><p><b>dd</b>        -    删除当前光标所在的行</p><p><b>数字dd</b>      -  数字如果是N， 从光标所在的位置开始删N行</p><p><b>：%d</b>         -  末行模式下输入%d，删除所有</p><p><b>u</b>               -   撤销</p><p><b>ctr+r</b>        -  反撤销</p><p><b>yy</b>            -     复制光标所在的行</p><p><b>数字yy</b>         -   数字如果是N， 从光标所在的位置开始复制N行</p><p><strong>: %y</strong>              -  末行模式下输入%y,  复制所有</p><p><b>p</b>               -   粘贴</p><h5 id="4-查找"><a href="#4-查找" class="headerlink" title="4)查找"></a>4)查找</h5><p><strong>：/正则表达式</strong>           -     查找当前文件中符合正则表达式的内容(结果可以用n和N来切换)</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim中正则表达式的要求:</span><br><span class="line">1)python正则中所有的语法都有效</span><br><span class="line">2)单独使用有特殊功能的符号，在使用的时候需要加\才有效</span><br><span class="line">r'\d+'    -&gt;  /\d\+</span><br><span class="line">r'\d&#123;3&#125;'  -&gt;  /\d\&#123;3&#125;</span><br><span class="line">r'and|or' -&gt;  /and\|or</span><br></pre></td></tr></table></figure><p><strong>：1,$s/被替换的对象对应的正则/替换内容/参数</strong>              - 将文件中正则匹配到的内容替换成指定内容</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">参数:</span><br><span class="line">g      -    全局匹配(会替换所有符合要求的字符串，默认情况下一行只替换一个)</span><br><span class="line">i      -    匹配的时候忽略大小写</span><br><span class="line">c      -    替换的时候给出提示</span><br><span class="line">e      -    忽略错误(忽略正则的错误)</span><br></pre></td></tr></table></figure><h3 id="4-高级操作"><a href="#4-高级操作" class="headerlink" title="4.高级操作"></a>4.高级操作</h3><h5 id="1-比较文件"><a href="#1-比较文件" class="headerlink" title="1)比较文件"></a>1)比较文件</h5><p>vim  -d  文件路径1 文件路径2</p><h5 id="2-同时打开和编辑多个文件"><a href="#2-同时打开和编辑多个文件" class="headerlink" title="2)同时打开和编辑多个文件"></a>2)同时打开和编辑多个文件</h5><p>vim  文件路径1 文件路径2 …</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.切换窗口内容</span></span><br><span class="line">在末行模式下输入: ls  可以查看当前打开的所有的文件和文件对象的标号</span><br><span class="line">在末行模式下输入: b标号   可以将当前窗口中的内容切换到指定标号对应的文件的内容</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.窗口的拆分</span></span><br><span class="line">在末行模式下输入: sp/vs  可以将当前窗口垂直方向/水平方向进行拆分；拆分后可以在命令模式下按ctr+w来切换窗口</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;vim的使用&quot;&gt;&lt;a href=&quot;#vim的使用&quot; class=&quot;headerlink&quot; title=&quot;vim的使用&quot;&gt;&lt;/a&gt;vim的使用&lt;/h1&gt;&lt;h3 id=&quot;1-vim的三种模式&quot;&gt;&lt;a href=&quot;#1-vim的三种模式&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git常用指令</title>
+    <link href="http://yoursiteoi.com/2019/12/21/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>http://yoursiteoi.com/2019/12/21/git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <published>2019-12-21T08:12:53.099Z</published>
+    <updated>2019-12-19T09:42:25.297Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git常用指令"><a href="#git常用指令" class="headerlink" title="git常用指令"></a>git常用指令</h1><h2 id="1-基本指令"><a href="#1-基本指令" class="headerlink" title="1.基本指令"></a>1.基本指令</h2><p><code>git init</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  新建git仓库<br><code>git add 文件/文件夹</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  将文件添加到缓存区中<br><code>git add -A</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中<br><code>git status</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———    查看git状态<br><code>git commit -m  ‘提交信息’</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  将缓存区中的内容全部提交到git本地仓库中  </p><p><code>git log</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——-    查看提交日志  </p><p><code>git reset  -- hard   HEAD</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——   让工作目录中的内容和仓库中的内容保持一致<br><code>git reset  --hard HEAD^</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到上一个版本<br><code>git  reset  -- hard 版本号</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到指定的版本  </p><p><code>git checkout  文件名</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  </p><p><code>git clone &lt;url&gt;</code> - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  </p><p><code>git remote add origin 地址</code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 关联远程仓库(只需要关联一次)</p><p><code>git push [-u] origin master</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 提交(-u在第一次提交分支的时候才用)  </p><p><code>git push</code>         —  将本地仓库的内容提交到远程仓库master分支上</p><p><code>git push origin 分支名</code>       —  将本地仓库的内容提交到远程仓库对应的分支上, 如果分支不存在会自动创建</p><p><code>git pull</code>          —  将远程仓库中的内容更新到本地仓库和工作区中</p><h2 id="2-分之管理"><a href="#2-分之管理" class="headerlink" title="2.分之管理"></a>2.分之管理</h2><p>创建仓库会默认给我们创建一个master分之,这个分之一般作为提交和发布分之;开发一般会自己创建一个develop分之，用来开发和测试;多人协作的时候还可能根据不同的人或者(不同的功能)创建不同的分之，用来独立开发  </p><p>常见分之： master(主要是合并develop), develop(主要合并下面的其他分支), 功能/人员分之(开发)  </p><p><code>git branch [-a]</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        - 查看分之<br><code>git branch 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 创建分之<br><code>git checkout   分支名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-   切换分之<br><code>git checkout -b 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    - 切换并创建新的分之<br><code>git diff    分之1  分之2</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 查看两个分之之间的差异<br><code>git merge 分之名</code>            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 让当前分之和指定分之进行合并     </p><p>注意: 切换分之、push、pull，这些操作前要保证工作区是clean  </p><p>怎么避免冲突：  不要发生多个分之对同一个文件在同一个版本下进行修改(和同伴确认和商量)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;git常用指令&quot;&gt;&lt;a href=&quot;#git常用指令&quot; class=&quot;headerlink&quot; title=&quot;git常用指令&quot;&gt;&lt;/a&gt;git常用指令&lt;/h1&gt;&lt;h2 id=&quot;1-基本指令&quot;&gt;&lt;a href=&quot;#1-基本指令&quot; class=&quot;headerlink&quot; 
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hexo博客搭建</title>
