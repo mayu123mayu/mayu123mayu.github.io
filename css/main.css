@@ -1044,9 +1044,10 @@ pre .javascript .function {
 }
 .menu-item a,
 .menu-item span.exturl {
+  color: #f00;
   border-bottom: 0;
   display: block;
-  font-size: 0.8125em;
+  font-size: $font-size-smarller;
   transition-property: border-color;
   transition-delay: 0s;
   transition-duration: 0.2s;
@@ -1166,7 +1167,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #869c53;
+  background: #f1ff18;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2308,5 +2309,5 @@ body {
   opacity: 0.8;
 }
 .header-inner {
-  opacity: 0.5;
+  opacity: 0.8;
 }
