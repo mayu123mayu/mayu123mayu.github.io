@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursiteoi.com/"/>
-  <updated>2019-12-27T12:17:28.855Z</updated>
+  <updated>2019-12-28T04:15:39.941Z</updated>
   <id>http://yoursiteoi.com/</id>
   
   <author>
@@ -21,9 +21,19 @@
     <link href="http://yoursiteoi.com/2019/12/27/86%E6%95%B0%E6%8D%AE%E5%BA%93redis%E5%9F%BA%E7%A1%80/"/>
     <id>http://yoursiteoi.com/2019/12/27/86%E6%95%B0%E6%8D%AE%E5%BA%93redis%E5%9F%BA%E7%A1%80/</id>
     <published>2019-12-27T12:17:28.715Z</published>
-    <updated>2019-12-27T12:17:28.855Z</updated>
+    <updated>2019-12-28T04:15:39.941Z</updated>
+    
+    <content type="html"><![CDATA[<p>#一Redis数据类型和方法。</p><p>####1.字符串<br>set key value  —&gt;添加键值对<br>get key —-&gt; 通过key拿到值<br>strlen key —-&gt;获取字符串的长度</p><p>append key value2     —-&gt;给字符串追加内容<br>mset key1 value1 key2 value2     —&gt;添加多键值对。<br>incr key    —&gt;value对应的值是数字让它的值加1</p><p>incrby key value    —-&gt;value对应的值是数字让他的值加上任意的数字</p><p>decr key —-&gt;value是数字，值减1</p><p>decrby key value —-&gt;value是数字。值加上任意的数量</p><p>getrange key start end —-&gt;获取字符串指定范围的子串<br>setrange key offset value —-&gt;修改字符串指定位置的内容。其中 offset 是要修改的位置下标，从这个下标开始, value是你要修改的新的值</p><a id="more"></a><p>####2.哈希表-hash</p><p>哈希对象：就是一个key里面存多个key和value的键值对。<br>hset key field value —-&gt;添加hash类型的键值对</p><p><img src="C:%5CUsers%5CAdministrator%5CDesktop%5Chmset.png" alt="hmset"></p><p>hget key  field—-&gt; 获取指定的key的键值对中的键的值。</p><p><img src="C:%5CUsers%5CAdministrator%5CDesktop%5Chget2.png" alt="hget"></p><p>hgetall 一次 获取多个。 </p><p><img src="C:%5CUsers%5CAdministrator%5CDesktop%5Chgetall.png" alt="hgetall"><br>hkeys —–&gt;获取所有的键<br>hvals —–&gt;获取所有的值.<br>hexists —–&gt;判断一个键的某个字段是否存在。<br>exists——–&gt;判断指定的键知否存在。<br>####3.列表<br>lpush ————-&gt;放在左边<br>rpush————–&gt;放在后边<br>lpop—————-&gt;从左边取出<br>rpop————–&gt;从右边取出<br>llen—————–&gt;查看一共有多少个元素。<br>lrange————-&gt;查看指定范围的下标的元素，但是这个和python中的列表的区在于，python中是取头不取尾，而这个是取的到尾部的。<br>lindex key n ———–&gt;查看指定的下标对应的元素的值。<br>lrem key count value ———–删除列表中指定个数的指定的值。<br>lrem list1 1 20 —————–&gt;从列表1中删除1个20<br>####4.集合<br>sadd key value1 value2 value3 ———–&gt;添加多个值<br>srem key value ———————————-&gt;删除指定的值<br>smembers key ———————————–&gt;查看所有的元素<br>sinter key1 key2 ———————————-&gt;交集<br>suntion key1 key2———————————&gt; 并集<br>sdiff key1 key2 ————————————–&gt;差集<br>scard —————————————————-&gt;查看集合中元素的个数<br>spop——————————————————-&gt;随机获取集合中的数<br>sismember key valu———————————&gt;查看集合中是否存在指定的元素。<br>####5.有序集合(zset)<br>zadd key1 value1,value2—————&gt;建有序的集合<br>zadd zset 1 xiaowang 2 xiaoming 3 xiaoli<br>(上面这种可以指定某一个集合中某个key的值，然后进行排序。)<br>zrem key member—————————-&gt; 删除<br>zrange key start stop ———————–&gt;升序排列<br>zreverange————————————–&gt;降序排列<br>zcard———————————————-&gt;查看元素的个数<br>zscore key value —————————–&gt;查看指定的value的值、<br>zincrby key value menber —————-&gt;修改元素的score值<br>####6.LBS—Location Based Service  -基于位置的服务。</p><p>这个知识点属于额外的内容，如果想要了解，请访问网站<a href="http://redisdoc.com/geo/geopos.html" target="_blank" rel="noopener">redis</a>了解更多的知识点。<br>#用python连接redis.<br>####1.导入redis<br>####2.连接</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">client = redis.Redis(host=<span class="string">'120.77.222.217'</span>, port=<span class="number">6379</span>,</span><br><span class="line">                     password=<span class="string">'1qaz2wsx'</span>)</span><br></pre></td></tr></table></figure><p>###3.用redis的相关方法进行操作。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;#一Redis数据类型和方法。&lt;/p&gt;
+&lt;p&gt;####1.字符串&lt;br&gt;set key value  —&amp;gt;添加键值对&lt;br&gt;get key —-&amp;gt; 通过key拿到值&lt;br&gt;strlen key —-&amp;gt;获取字符串的长度&lt;/p&gt;
+&lt;p&gt;append key value2     —-&amp;gt;给字符串追加内容&lt;br&gt;mset key1 value1 key2 value2     —&amp;gt;添加多键值对。&lt;br&gt;incr key    —&amp;gt;value对应的值是数字让它的值加1&lt;/p&gt;
+&lt;p&gt;incrby key value    —-&amp;gt;value对应的值是数字让他的值加上任意的数字&lt;/p&gt;
+&lt;p&gt;decr key —-&amp;gt;value是数字，值减1&lt;/p&gt;
+&lt;p&gt;decrby key value —-&amp;gt;value是数字。值加上任意的数量&lt;/p&gt;
+&lt;p&gt;getrange key start end —-&amp;gt;获取字符串指定范围的子串&lt;br&gt;setrange key offset value —-&amp;gt;修改字符串指定位置的内容。其中 offset 是要修改的位置下标，从这个下标开始, value是你要修改的新的值&lt;/p&gt;
     
     </summary>
     
