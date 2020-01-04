@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小马哥</title>
+  
+  <subtitle>因为到过地狱才知道天堂的美好</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mayu123mayu.github.io/"/>
+  <updated>2020-01-04T08:26:34.685Z</updated>
+  <id>http://mayu123mayu.github.io/</id>
+  
+  <author>
+    <name>2m雨天</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test2</title>
+    <link href="http://mayu123mayu.github.io/2020/01/04/test2/"/>
+    <id>http://mayu123mayu.github.io/2020/01/04/test2/</id>
+    <published>2020-01-04T08:26:02.354Z</published>
+    <updated>2020-01-04T08:26:34.685Z</updated>
+    
+    <content type="html"><![CDATA[<p>你是真的坑啊 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;你是真的坑啊 &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
