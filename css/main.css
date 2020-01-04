@@ -1167,7 +1167,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff20d4;
+  background: #06635d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2298,7 +2298,7 @@ embed {
   width: 320px;
 }
 body {
-  background: url("http://pic1.win4000.com/wallpaper/4/576b9a6ebb732.jpg");
+  background: url("http://pic.netbian.com/uploads/allimg/190508/222907-15573257479260.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
