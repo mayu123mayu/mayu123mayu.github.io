@@ -57,8 +57,8 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 
   <meta name="description" content="一.session对象1.在Django框架中提供了一个在服务端保存用户相关信息的session对象。  Session:在计算机网络应用中，称为“会话控制”。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还">
 <meta property="og:type" content="article">
-<meta property="og:title" content="99-session跨站请求伪造以及多种编码方式">
-<meta property="og:url" content="http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="99session跨站请求伪造以及多种编码方式">
+<meta property="og:url" content="http://mayu123mayu.github.io/2020/01/05/99session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/index.html">
 <meta property="og:site_name" content="小马哥">
 <meta property="og:description" content="一.session对象1.在Django框架中提供了一个在服务端保存用户相关信息的session对象。  Session:在计算机网络应用中，称为“会话控制”。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还">
 <meta property="og:locale" content="zh_CN">
@@ -71,7 +71,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/4956968-0175cadcbfda62d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
-<link rel="canonical" href="http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
+<link rel="canonical" href="http://mayu123mayu.github.io/2020/01/05/99session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   };
 </script>
 
-  <title>99-session跨站请求伪造以及多种编码方式 | 小马哥</title>
+  <title>99session跨站请求伪造以及多种编码方式 | 小马哥</title>
   
 
 
@@ -230,7 +230,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/99session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/kebi.jpg">
@@ -243,7 +243,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          99-session跨站请求伪造以及多种编码方式
+          99session跨站请求伪造以及多种编码方式
         </h1>
 
         <div class="post-meta">
@@ -355,7 +355,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canv
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/" title="99-session跨站请求伪造以及多种编码方式">http://mayu123mayu.github.io/2020/01/05/99-session跨站请求伪造以及多种编码方式/</a>
+    <a href="http://mayu123mayu.github.io/2020/01/05/99session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/" title="99session跨站请求伪造以及多种编码方式">http://mayu123mayu.github.io/2020/01/05/99session跨站请求伪造以及多种编码方式/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
