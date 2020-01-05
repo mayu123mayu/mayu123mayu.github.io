@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mayu123mayu.github.io/"/>
-  <updated>2020-01-05T04:16:42.000Z</updated>
+  <updated>2020-01-05T13:18:02.038Z</updated>
   <id>http://mayu123mayu.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>99-session跨站请求伪造以及多种编码方式</title>
+    <link href="http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/"/>
+    <id>http://mayu123mayu.github.io/2020/01/05/99-session%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F/</id>
+    <published>2020-01-05T13:18:01.949Z</published>
+    <updated>2020-01-05T13:18:02.038Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="一-session对象"><a href="#一-session对象" class="headerlink" title="一.session对象"></a>一.session对象</h4><p>1.在Django框架中提供了一个在服务端保存用户相关信息的session对象。</p><hr><p>Session:在计算机网络应用中，称为“会话控制”。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web 页时，如果该用户还没有会话，则 Web 服务器将自动创建一个 Session 对象。当会话过期或被放弃后，服务器将终止该会话。Session 对象最常见的一个用法就是存储用户的首选项。例如，如果用户指明不喜欢查看图形，就可以将该信息存储在 Session 对象中。有关使用 Session 对象的详细信息，请参阅“ASP 应用程序”部分的“管理会话”。注意 会话状态仅在支持 cookie 的浏览器中保留。</p><hr><p>2.session与cookie的区别<br>session的底层是基于cookie技术来实现的，在早器保存会话状态一直用的cookie，cookie是保存在客户端的明文键值对，但这样直接保存重要信息是不安全的，后来衍生了session，session是加密后的cookie键值，加密后的值即使被人截取，也无法获取到密码等敏感信息，避免了重要资源信息泄露。当用户打开浏览器，去访问服务器的时候，服务器会为每个用户的浏览器创建一个会话对象(session对象)，并且为每个session对象创建一个Jsessionid号。当session对象创建成功后，会以cookie的方式将这个Jsessionid号回写给浏览器，当用户再次进行访问服务器时，及带了具有Jsessionid号的cookie数据来一起访问服务器，服务器通过不同session的 Jsessionid号来找出与其相关联的session对象，通过不同的session对象来为不同的用户服务。</p><p><img src="https://upload-images.jianshu.io/upload_images/4956968-0175cadcbfda62d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p><hr><h4 id="二-服务器记住用户的三种方式"><a href="#二-服务器记住用户的三种方式" class="headerlink" title="二.服务器记住用户的三种方式"></a>二.服务器记住用户的三种方式</h4><p>1.希望服务器记住用户的方式有以下三种：<br>1.URL重写  <a href="http://www.baidu.com/?uid=xxxxxx" target="_blank" rel="noopener">http://www.baidu.com/?uid=xxxxxx</a></p><hr><p>2.隐藏域（隐式表单域）</p><form><input type="hidden" name="uid" value="xxxxxx"></form>*************3.浏览器本地存储（1）cookie：是浏览器中的临时的文件可以保存键值对中其中的数据，在发起HTTP请求是会自动加载在请求头中。其实就是用户的跟踪。<p><img src="https://upload-images.jianshu.io/upload_images/4956968-2c27a91a14935f7b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cookie.jpg"></p><p>（2window.LocalStorage/wingow.sessionStorage</p><hr><p>cookie和session两者的关系：</p><p>request.session—&gt;服务器内存中的一个对象<br>cookie—&gt;用户浏览器临时文件-—-&gt;cookie中保存了session的ID</p><hr><h4 id="三-跨站请求的伪造。"><a href="#三-跨站请求的伪造。" class="headerlink" title="三.跨站请求的伪造。"></a>三.跨站请求的伪造。</h4><hr><p><img src="https://upload-images.jianshu.io/upload_images/4956968-d8d9f622c1ff3e84.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="跨站请求伪造和post令牌.jpg"></p><hr><h4 id="四-Base64编码"><a href="#四-Base64编码" class="headerlink" title="四.Base64编码"></a>四.Base64编码</h4><hr><p>se64并不适合直接放在URL里传输，因为URL编码器会把标准Base64中的“/”和“+”字符变为形如“%XX”的形式，而这些“%”号在存入数据库时还需要再进行转换，因为ANSI SQL中已将“%”号用作<a href="https://baike.baidu.com/item/%E9%80%9A%E9%85%8D%E7%AC%A6" target="_blank" rel="noopener">通配符</a>。</p><p>为解决此问题，可采用一种用于URL的改进Base64编码，它在末尾填充’=’号，并将标准Base64中的“+”和“/”分别改成了“-”和“_”，这样就免去了在URL编解码和数据库存储时所要作的转换，避免了编码信息长度在此过程中的增加，并统一了数据库、表单等处对象[标识符]格式。</p><p>另有一种用于[正则表达式]它将“+”和“/”改成了“!”和“-”，因为“+”,“*”以及前面在IRCu中用到的“[”和“]”在正则表达式中都可能具有特殊含义。</p><p>此外还有一些变种，它们将“+/”改为“<em>-”或“._”（用作编程语言中的标识符名称）或“.-”（用于XML中的Nmtoken）甚至“</em>:”（用于XML中的Name）。</p><p>Base64要求把每三个8Bit的字节转换为四个6Bit的字节（3<em>8 = 4</em>6 = 24），然后把6Bit再添两位高位0，组成四个8Bit的字节，也就是说，转换后的字符串理论上将要比原来的长1/3。</p><h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><p>关于这个编码的规则：</p><p>①.把3个字节变成4个字节。</p><p>②每76个字符加一个换行符。</p><p>③.最后的结束符也要处理。</p><hr><h4 id="五-python中Base64编码。"><a href="#五-python中Base64编码。" class="headerlink" title="五.python中Base64编码。"></a>五.python中Base64编码。</h4><hr><p>（1）python中有一个模块base64<br>导入模块：<br>from base64 import b64encode，b64decode。</p><p>（2）base64encode(二进制的数据)—-可以把二进制的数据转为base64的形式。</p><hr><h4 id="六-js中编码base64-的方式"><a href="#六-js中编码base64-的方式" class="headerlink" title="六.js中编码base64 的方式"></a>六.js中编码base64 的方式</h4><hr><p>（1）window.btoa(二进制的数据) —–编码成base64为<br>（2）window.atob()—–解码</p><hr><h4 id="七-百分号编码"><a href="#七-百分号编码" class="headerlink" title="七.百分号编码"></a>七.百分号编码</h4><hr><p>（1）urllib 库<br>—-支持这种编码方式。<br>from urllib.parse import quote ,unquote<br>（2）编码——quote(中文字符或空格)<br>（3）解码——-unquote(“二进制”)还原成中文字符。</p><hr><h4 id="八-加密解密-编码解码-摘要签名指纹。"><a href="#八-加密解密-编码解码-摘要签名指纹。" class="headerlink" title="八.加密解密,编码解码,摘要签名指纹。"></a>八.加密解密,编码解码,摘要签名指纹。</h4><hr><p>加密解密    rsa/aes<br>编码解码    base64/百分号编码<br>摘要签名指纹    md5 shal sha256 sha512</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;一-session对象&quot;&gt;&lt;a href=&quot;#一-session对象&quot; class=&quot;headerlink&quot; title=&quot;一.session对象&quot;&gt;&lt;/a&gt;一.session对象&lt;/h4&gt;&lt;p&gt;1.在Django框架中提供了一个在服务端保存用户相关信息的sess
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>26前端-入门及表格</title>
@@ -40,35 +62,13 @@
   </entry>
   
   <entry>
-    <title>99</title>
-    <link href="http://mayu123mayu.github.io/2020/01/05/99/"/>
-    <id>http://mayu123mayu.github.io/2020/01/05/99/</id>
-    <published>2020-01-05T04:31:52.411Z</published>
-    <updated>2020-01-05T04:16:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="一"><a href="#一" class="headerlink" title="一."></a>一.</h4><p>1.希望服务器记住用户的方式有以下三种：<br>1.URL重写  <a href="http://www.baidu.com/?uid=xxxxxx" target="_blank" rel="noopener">http://www.baidu.com/?uid=xxxxxx</a></p><hr><p>2.隐藏域（隐式表单域）</p><form><input type="hidden" name="uid" value="xxxxxx"></form>*************3.浏览器本地存储（1）cookie：是浏览器中的临时的文件可以保存键值对中其中的数据，在发起HTTP请求是会自动加载在请求头中。其实就是用户的跟踪。<p><img src="https://upload-images.jianshu.io/upload_images/4956968-2c27a91a14935f7b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="cookie.jpg"></p><p>（2window.LocalStorage/wingow.sessionStorage</p><hr><p>cookie和session两者的关系：</p><p>request.session—&gt;服务器内存中的一个对象<br>cookie—&gt;用户浏览器临时文件-—-&gt;cookie中保存了session的ID</p><hr><h4 id="二-跨站请求的伪造。"><a href="#二-跨站请求的伪造。" class="headerlink" title="二.跨站请求的伪造。"></a>二.跨站请求的伪造。</h4><hr><p><img src="https://upload-images.jianshu.io/upload_images/4956968-d8d9f622c1ff3e84.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="跨站请求伪造和post令牌.jpg"></p><hr>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一.&quot;&gt;&lt;/a&gt;一.&lt;/h4&gt;&lt;p&gt;1.希望服务器记住用户的方式有以下三种：&lt;br&gt;1.URL重写  &lt;a href=&quot;http://www.baidu.com/?uid=xxxx
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>98-Django加载资源异步请求局部刷新</title>
     <link href="http://mayu123mayu.github.io/2020/01/05/98-Django%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%B1%80%E9%83%A8%E5%88%B7%E6%96%B0/"/>
     <id>http://mayu123mayu.github.io/2020/01/05/98-Django%E5%8A%A0%E8%BD%BD%E8%B5%84%E6%BA%90%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82%E5%B1%80%E9%83%A8%E5%88%B7%E6%96%B0/</id>
     <published>2020-01-05T04:31:52.409Z</published>
-    <updated>2020-01-05T04:16:43.000Z</updated>
+    <updated>2020-01-05T10:43:55.292Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="一-request请求"><a href="#一-request请求" class="headerlink" title="一.request请求"></a>一.request请求</h4><hr><p>拿请求的方法：request.method()<br>拿请求的路径：request.path()</p><hr><p>Django封装的request方法可以通过上面的方法拿到它相关的所有的信息。<br>补充知识：startswith —检查字符串以什么开头。<br>endswith———-检查字符串以什么结尾。</p><hr><h4 id="二-上传文件"><a href="#二-上传文件" class="headerlink" title="二.上传文件"></a>二.上传文件</h4><p>1.model中的方法<br>（1）.声明文件的数据用：models.FilField()<br>（2）.声明图片的数据用：models.ImageField(upload_to=”上传文件的路径”)</p><hr><p>2.在项目中新建media文件夹</p><hr><p>3.在setting中配置资源上传的路径<br><img src="https://upload-images.jianshu.io/upload_images/4956968-e06e835a4dec948b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="setting文件路径的设置.png"></p><hr><p><strong>注意</strong>：<br>（1）<br>MEDIA_ROOT:配置的是上传资源的路径。</p><hr><p>models.ImageField(upload_to=”上传文件的路径”)—这个的路径就会放在上面的文件夹下面。</p><hr><p>（2）<br>MEDIA_URL:配置静态资源的路径。</p><hr><p>4.在url中的urlpatters中配置静态资源的路径。<br>在列表的后面加上：</p><ul><li>static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</li></ul><hr><p>意义：处理静态资源，<br>setting是导入的方法：可以用它去读取我的资源的路径。<br>document_root=settings.MEDIA_ROOT—-这句话就是告诉程序我资源的根路径在settings.MEDIA_ROOT。</p><p>document_root：表示资源的根路径。</p><hr><p>作用：<br>你可以请求MEDIA_URL下的所有的静态的资源。</p><hr><h4 id="三-更换admin的样式（第三方库的实现）"><a href="#三-更换admin的样式（第三方库的实现）" class="headerlink" title="三.更换admin的样式（第三方库的实现）"></a>三.更换admin的样式（第三方库的实现）</h4><hr><p>意义：可以实现响应式的布局，一句话就是可以适配屏幕的宽度。</p><hr><p>（1）pip install django-jet (装上这个三方的库)</p><hr><p>（2）在setting 的INSTALLED_APPS列表里的admin上面加”jet”<br>（3）在url中加： path(‘jet/‘, include(‘jet.urls’, ‘jet’))</p><hr><h4 id="四-生成文件的唯一标示符"><a href="#四-生成文件的唯一标示符" class="headerlink" title="四.生成文件的唯一标示符"></a>四.生成文件的唯一标示符</h4><p>1.用 from uuid import uuid1 这模块中这个方法<br>（1）生成随机唯一的，可以用来当做文件的名字。<br>2.用哈希摘要给文件取名字。<br>详解—前面文章hashilb文章。</p><hr><h4 id="五-异步请求、局部刷新（Ajax，Json）"><a href="#五-异步请求、局部刷新（Ajax，Json）" class="headerlink" title="五.异步请求、局部刷新（Ajax，Json）"></a>五.异步请求、局部刷新（Ajax，Json）</h4><hr><p>1.Asynchronous—–JavaScript—and—XML</p><p>两个异构系统之间可以通过XML来传输数据。<br>XML：纯文本数据。</p><hr><p><strong>异步请求</strong>：不中断用户的体验，偷偷的给服务器发请求拿数据。<br><strong>局部刷新</strong>：不刷新整个页面，只是属性一小部分。<br>2.Json写的更加简洁。</p><p>这个还没写完，自己看了再写</p><hr><h5 id="六-截流"><a href="#六-截流" class="headerlink" title="六.截流"></a>六.截流</h5><p>不让用户过于频繁的操作页面，给他一个限制的时间的操作，如果过于频繁的点击，那么页面什么都不做，并告诉用户过于频繁。</p><hr><h5 id="七-登陆页面和验证码。"><a href="#七-登陆页面和验证码。" class="headerlink" title="七.登陆页面和验证码。"></a>七.登陆页面和验证码。</h5><p>1.登陆页面判断request.method的类型<br>if request.method==”GET”:<br>这个是请求数据的就渲染登陆页面<br>if request.method==”POST”:<br>这个是提交数据的操作，可以用于写注册的view模型和页面。</p><hr><h5 id="八-用户注册的模型"><a href="#八-用户注册的模型" class="headerlink" title="八.用户注册的模型"></a>八.用户注册的模型</h5><p>（1）model中写相关的类<br>（2）写出相关的注册的属性<br>（3）生成迁移<br>（4）执行迁移<br>（5）在admin中写处要在后台里显示的类，便于在后台中进行管理。<br>（6）注册模型：<br>admin.site.register(写模型的类,admin中写的显示管理此类的类)</p>]]></content>
+    <content type="html"><![CDATA[<h4 id="一-request请求"><a href="#一-request请求" class="headerlink" title="一.request请求"></a>一.request请求</h4><hr><p>拿请求的方法：request.method()<br>拿请求的路径：request.path()</p><hr><p>Django封装的request方法可以通过上面的方法拿到它相关的所有的信息。<br>补充知识：startswith —检查字符串以什么开头。<br>endswith———-检查字符串以什么结尾。</p><hr><h4 id="二-上传文件"><a href="#二-上传文件" class="headerlink" title="二.上传文件"></a>二.上传文件</h4><p>1.model中的方法<br>（1）.声明文件的数据用：models.FilField()<br>（2）.声明图片的数据用：models.ImageField(upload_to=”上传文件的路径”)</p><hr><p>2.在项目中新建media文件夹</p><hr><p>3.在setting中配置资源上传的路径<br><img src="https://upload-images.jianshu.io/upload_images/4956968-e06e835a4dec948b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="setting文件路径的设置.png"></p><hr><p><strong>注意</strong>：<br>（1）<br>MEDIA_ROOT:配置的是上传资源的路径。</p><hr><p>models.ImageField(upload_to=”上传文件的路径”)—这个的路径就会放在上面的文件夹下面。</p><hr><p>（2）<br>MEDIA_URL:配置静态资源的路径。</p><hr><p>4.在url中的urlpatters中配置静态资源的路径。<br>在列表的后面加上：</p><ul><li>static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)</li></ul><hr><p>意义：处理静态资源，<br>setting是导入的方法：可以用它去读取我的资源的路径。<br>document_root=settings.MEDIA_ROOT—-这句话就是告诉程序我资源的根路径在settings.MEDIA_ROOT。</p><p>document_root：表示资源的根路径。</p><hr><p>作用：<br>你可以请求MEDIA_URL下的所有的静态的资源。</p><hr><h4 id="三-更换admin的样式（第三方库的实现）"><a href="#三-更换admin的样式（第三方库的实现）" class="headerlink" title="三.更换admin的样式（第三方库的实现）"></a>三.更换admin的样式（第三方库的实现）</h4><hr><p>意义：可以实现响应式的布局，一句话就是可以适配屏幕的宽度。</p><hr><p>（1）pip install django-jet (装上这个三方的库)</p><hr><p>（2）在setting 的INSTALLED_APPS列表里的admin上面加”jet”<br>（3）在url中加： path(‘jet/‘, include(‘jet.urls’, ‘jet’))</p><hr><h4 id="四-生成文件的唯一标示符"><a href="#四-生成文件的唯一标示符" class="headerlink" title="四.生成文件的唯一标示符"></a>四.生成文件的唯一标示符</h4><p>1.用 from uuid import uuid1 这模块中这个方法<br>（1）生成随机唯一的，可以用来当做文件的名字。<br>2.用哈希摘要给文件取名字。<br>详解—前面文章hashilb文章。</p><hr><h4 id="五-异步请求、局部刷新（Ajax，Json）"><a href="#五-异步请求、局部刷新（Ajax，Json）" class="headerlink" title="五.异步请求、局部刷新（Ajax，Json）"></a>五.异步请求、局部刷新（Ajax，Json）</h4><hr><p>1.Asynchronous—–JavaScript—and—XML</p><p>两个异构系统之间可以通过XML来传输数据。<br>XML：纯文本数据。</p><hr><p><strong>异步请求</strong>：不中断用户的体验，偷偷的给服务器发请求拿数据。<br><strong>局部刷新</strong>：不刷新整个页面，只是属性一小部分。<br>2.Json写的更加简洁。</p><p>本质就是：通过jQuery对象的getjSon方法发起Ajax请求：</p><p>$。getJSON(点击的URL，（json）=&gt;{<br>    点击url需要执行的函数体<br>})</p><hr><h5 id="六-截流"><a href="#六-截流" class="headerlink" title="六.截流"></a>六.截流</h5><p>不让用户过于频繁的操作页面，给他一个限制的时间的操作，如果过于频繁的点击，那么页面什么都不做，并告诉用户过于频繁。</p><hr><h5 id="七-登陆页面和验证码。"><a href="#七-登陆页面和验证码。" class="headerlink" title="七.登陆页面和验证码。"></a>七.登陆页面和验证码。</h5><p>1.登陆页面判断request.method的类型<br>if request.method==”GET”:<br>这个是请求数据的就渲染登陆页面<br>if request.method==”POST”:<br>这个是提交数据的操作，可以用于写注册的view模型和页面。</p><hr><h5 id="八-用户注册的模型"><a href="#八-用户注册的模型" class="headerlink" title="八.用户注册的模型"></a>八.用户注册的模型</h5><p>（1）model中写相关的类<br>（2）写出相关的注册的属性<br>（3）生成迁移<br>（4）执行迁移<br>（5）在admin中写处要在后台里显示的类，便于在后台中进行管理。<br>（6）注册模型：<br>admin.site.register(写模型的类,admin中写的显示管理此类的类)</p>]]></content>
     
     <summary type="html">
     
