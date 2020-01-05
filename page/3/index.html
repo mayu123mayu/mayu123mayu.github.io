@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://mayu123mayu.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":20,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="菜鸟的编程自学之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小马哥">
+<meta property="og:url" content="http://mayu123mayu.github.io/page/3/index.html">
+<meta property="og:site_name" content="小马哥">
+<meta property="og:description" content="菜鸟的编程自学之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="2m雨天">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mayu123mayu.github.io/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>小马哥</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+<link rel="alternate" href="/atom.xml" title="小马哥" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    
+    
+<a href="https://your-url" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小马哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">因为到过地狱才知道天堂的美好</p>
+
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home  //"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-users"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive //归档"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/80-vim%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/80-vim%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%82/" class="post-title-link" itemprop="url">80-vim的使用。</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="vim的使用"><a href="#vim的使用" class="headerlink" title="vim的使用"></a>vim的使用</h1><h3 id="1-vim的三种模式"><a href="#1-vim的三种模式" class="headerlink" title="1.vim的三种模式"></a>1.vim的三种模式</h3><p>命令模式：末尾既没有插入的字样也没有冒号</p>
+<p>​           (在编辑模式和末行模式下按esc键可以进入命令模式)</p>
+<p>编辑模式：末尾会显示’—插入—‘/‘—insert—‘， 并且在编辑模式下可以对文件进行输入操作(可以编辑)</p>
+<p>​           (在命令模式下按i就可以进入编辑模式)</p>
+<p>末行模式：末尾显示冒号，并且冒号后边可以输入内容</p>
+<p>​          (在命令模式下输入冒号就可以进入末行模式)</p>
+<h3 id="2-vim的配置"><a href="#2-vim的配置" class="headerlink" title="2.vim的配置"></a>2.vim的配置</h3><p>通过编辑<code>~/.vimrc</code>文件或者<code>/etc/vimrc</code>文件可以对vim编辑器进行相关配置</p>
+<h3 id="3-基本操作"><a href="#3-基本操作" class="headerlink" title="3.基本操作"></a>3.基本操作</h3><h5 id="1）保存和退出"><a href="#1）保存和退出" class="headerlink" title="1）保存和退出"></a>1）保存和退出</h5><p>所有保存和退出的指令都是末行模式下执行的</p>
+<p>w       -   只保存(相当于ctr+s)</p>
+<p>q       -   直接退出(只有当前文件的内容全部保存才能直接退出，如果不保存强制退出，需要在q加!)</p>
+<p>wq     -  先保存再退出</p>
+<p>注意: 强制执行在指令后加!</p>
+<h5 id="2-光标操作"><a href="#2-光标操作" class="headerlink" title="2)光标操作"></a>2)光标操作</h5><p>所有光标操作对应的指令都是在命令模式下执行的</p>
+<p>^      -   直接将光标移动到行首</p>
+<p>$     -    直接将光标移动到行尾</p>
+<p>G     -    移动到文件末尾</p>
+<p>gg   -    移动到文件开头</p>
+<p>行号G       -  移动到指定行号的位置</p>
+<h5 id="3-文本操作"><a href="#3-文本操作" class="headerlink" title="3)文本操作"></a>3)文本操作</h5><p>以下指令前面如果没有冒号表示在命令模式下执行，有冒号的在末行模式下执行</p>
+<p>dd      -    删除当前光标所在的行</p>
+<p>数字dd      -  数字如果是N， 从光标所在的位置开始删N行</p>
+<p>：%d         -  末行模式下输入%d，删除所有</p>
+<p>u            -   撤销</p>
+<p>ctr+r        -  反撤销</p>
+<p>yy            -     复制光标所在的行</p>
+<p>数字yy         -   数字如果是N， 从光标所在的位置开始复制N行</p>
+<p><strong>: %y</strong>              -  末行模式下输入%y,  复制所有</p>
+<p>p            -   粘贴</p>
+<h5 id="4-查找"><a href="#4-查找" class="headerlink" title="4)查找"></a>4)查找</h5><p><strong>：/正则表达式</strong>           -     查找当前文件中符合正则表达式的内容(结果可以用n和N来切换)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim中正则表达式的要求:</span><br><span class="line">1)python正则中所有的语法都有效</span><br><span class="line">2)单独使用有特殊功能的符号，在使用的时候需要加\才有效</span><br><span class="line">r'\d+'    -&gt;  /\d\+</span><br><span class="line">r'\d&#123;3&#125;'  -&gt;  /\d\&#123;3&#125;</span><br><span class="line">r'and|or' -&gt;  /and\|or</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>：1,$s/被替换的对象对应的正则/替换内容/参数</strong>              - 将文件中正则匹配到的内容替换成指定内容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">参数:</span><br><span class="line">g      -    全局匹配(会替换所有符合要求的字符串，默认情况下一行只替换一个)</span><br><span class="line">i      -    匹配的时候忽略大小写</span><br><span class="line">c      -    替换的时候给出提示</span><br><span class="line">e      -    忽略错误(忽略正则的错误)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-高级操作"><a href="#4-高级操作" class="headerlink" title="4.高级操作"></a>4.高级操作</h3><h5 id="1-比较文件"><a href="#1-比较文件" class="headerlink" title="1)比较文件"></a>1)比较文件</h5><p>vim  -d  文件路径1 文件路径2</p>
+<h5 id="2-同时打开和编辑多个文件"><a href="#2-同时打开和编辑多个文件" class="headerlink" title="2)同时打开和编辑多个文件"></a>2)同时打开和编辑多个文件</h5><p>vim  文件路径1 文件路径2 …</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1.切换窗口内容</span></span><br><span class="line">在末行模式下输入: ls  可以查看当前打开的所有的文件和文件对象的标号</span><br><span class="line">在末行模式下输入: b标号   可以将当前窗口中的内容切换到指定标号对应的文件的内容</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2.窗口的拆分</span></span><br><span class="line">在末行模式下输入: sp/vs  可以将当前窗口垂直方向/水平方向进行拆分；拆分后可以在命令模式下按ctr+w来切换窗口</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/79-linux%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/79-linux%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="post-title-link" itemprop="url">79-linux定时任务</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>574</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Linux定时任务"><a href="#Linux定时任务" class="headerlink" title="Linux定时任务"></a>Linux定时任务</h1><p>通过制定 ```crontab -e``编辑和开启定时任务</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建一个完整的定时任务，需要确定时间和任务</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1.时间</span></span><br><span class="line"> .---------------- minute (0 - 59)   # 分</span><br><span class="line"> |  .------------- hour (0 - 23)     # 时</span><br><span class="line"> |  |  .---------- day of month (1 - 31)  # 日</span><br><span class="line"> |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...  # 月</span><br><span class="line"> |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span><br><span class="line"> |  |  |  |  |</span><br><span class="line"> *  *  *  *  * user-name  command to be executed</span><br><span class="line"> </span><br><span class="line"> * * * * *   		- 每分钟执行一次任务(每隔一分钟)</span><br><span class="line"> */1 * * * *        - 每分钟执行一次任务(每隔一分钟)</span><br><span class="line"> */2 * * * *        - 每2分钟执行一次任务(每隔2分钟)</span><br><span class="line"> * */1 * * *        - 每隔1小时</span><br><span class="line"> * * */1 * *        - 每隔1天</span><br><span class="line"> * * * */2 *        - 每隔两个月</span><br><span class="line"> * * * *  fri       - 每周五执行任务</span><br><span class="line"> </span><br><span class="line"> 30 * * * *         - 时间点到30分的时候做</span><br><span class="line"> 0  * * * *         - 时间点到整点的时候执行任务</span><br><span class="line"> 30 2 * * *         - 时间到 02:30 的时候执行任务</span><br><span class="line"> 0  12 28 * *       - 每月28号12:00执行任务</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.任务</span></span><br><span class="line">写Linux指令, 指令如果有结果，结果看不到</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/78-shell%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/78-shell%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">78-shell编程</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="shell编程"><a href="#shell编程" class="headerlink" title="shell编程"></a>shell编程</h1><p>Shell脚本，是一种为shell编写的脚本程序。</p>
+<p>Shell编程跟JavaScript、Python编程一样，只要有一个能编写代码的文本编辑器和一个能解释执行的脚本解释器就可以了。</p>
+<p>Linux的Shell种类有很多，我们主要用的是Bourne Shell(/usr.bin/sh或/bin/sh)</p>
+<h5 id="1-创建shell文件"><a href="#1-创建shell文件" class="headerlink" title="1.创建shell文件"></a>1.创建shell文件</h5><p>原则上shell程序可以写在任何文件中，但是一般会在shell文件后加后缀.sh表示当前文件是一个shell文件</p>
+<p>shell需要可执行权限，所以创建好的shell文件需要添加x权限</p>
+<h5 id="2-基础语法"><a href="#2-基础语法" class="headerlink" title="2.基础语法"></a>2.基础语法</h5><h6 id="1）注释"><a href="#1）注释" class="headerlink" title="1）注释"></a>1）注释</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 单行注释</span></span><br><span class="line">:&lt;&lt;EOF</span><br><span class="line">多行注释1</span><br><span class="line">多行注释2</span><br><span class="line">多行注释3</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<h6 id="2）输出和输入"><a href="#2）输出和输入" class="headerlink" title="2）输出和输入"></a>2）输出和输入</h6><p>echo指令就相当于python中的print函数(默认会换行)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo  输出内容  </span><br><span class="line">echo -n 输出内容     # 输出的时候不换行</span><br></pre></td></tr></table></figure>
+
+
+
+<p>printf指令（输出不能换行）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf 输出内容</span><br></pre></td></tr></table></figure>
+
+
+
+<p>输入指令:  read 变量名    – 输入内容，并且将输入的结果保存在变量中</p>
+<h6 id="3）变量"><a href="#3）变量" class="headerlink" title="3）变量"></a>3）变量</h6><p>a. 声明变量的语法:   变量名=值</p>
+<p>说明:  a. 变量名和=, =和值之间不能有空格</p>
+<p>​       b. 变量名的要求和python变量名要求一样</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name='小明'</span><br><span class="line">age=18</span><br><span class="line">stu_name=小红</span><br></pre></td></tr></table></figure>
+
+
+
+<p>b. 使用变量: </p>
+<p>​         $变量</p>
+<p>​         ${变量}</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age=18</span><br><span class="line">echo $age</span><br><span class="line">age2=$&#123;age&#125;</span><br></pre></td></tr></table></figure>
+
+<p>c. 只读变量</p>
+<p>使用 readonly 命令可以将变量定义为只读变量，只读变量的值不能被改变。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gender='男'</span><br><span class="line">readonly gender</span><br><span class="line">gender='女'     # test.sh: line 17: gender: readonly variable</span><br></pre></td></tr></table></figure>
+
+<p>d. 删除变量</p>
+<p>使用 unset 命令可以删除变量</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name='yuting'</span><br><span class="line">unset name</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="4）获取linux指令结果"><a href="#4）获取linux指令结果" class="headerlink" title="4）获取linux指令结果"></a>4）获取linux指令结果</h6><p>在shell脚本中可以直接写linux指令，在执行shell脚本的时候这些指令可以直接获取</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls     # ls指令</span><br><span class="line">ls  -lh      # ls指令，并且设置参数</span><br><span class="line">touch a.txt    # 创建a.txt文件</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取指令结果: 变量=$(指令)  /   变量=`指令`</span></span><br><span class="line">lsresult=$(ls)    #将ls指令的结果保存到变量lsresult中</span><br><span class="line">currnet_path=`pwd`</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="3-shell字符串"><a href="#3-shell字符串" class="headerlink" title="3.shell字符串"></a>3.shell字符串</h5><p>shell中的字符串可以用单引号也可以使用双引号甚至可以不用引号。但是单引号中不能出现单引号字符，加\也不行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">str1='abc'</span><br><span class="line">str2="abc"</span><br><span class="line">str3=abc</span><br><span class="line">str4='abc\n123'		#支持转义字符,但是不支持编码字符</span><br><span class="line">str5="abc\n123"</span><br><span class="line"></span><br><span class="line">age=18</span><br><span class="line">str6="年龄是$age"    #双引号里面可以出现变量,单引号不行</span><br></pre></td></tr></table></figure>
+
+<h6 id="1）字符串拼接"><a href="#1）字符串拼接" class="headerlink" title="1）字符串拼接"></a>1）字符串拼接</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str1="hello"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">单引号拼接</span></span><br><span class="line">str2=''$&#123;str1&#125;',world!'</span><br><span class="line">str3=''$str1',world!'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">双引号拼接</span></span><br><span class="line">str4="$&#123;str1&#125;,world!"</span><br><span class="line">str5=""$str1",world!"</span><br></pre></td></tr></table></figure>
+
+<h6 id="2）获取字符串长度"><a href="#2）获取字符串长度" class="headerlink" title="2）获取字符串长度"></a>2）获取字符串长度</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1="abcd"</span><br><span class="line">echo $&#123;#str1&#125;    # 输出4</span><br></pre></td></tr></table></figure>
+
+<h6 id="3）字符串提取"><a href="#3）字符串提取" class="headerlink" title="3）字符串提取"></a>3）字符串提取</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 字符串:下标:个数   --从字符串中指定下标开始获取指定个数字符,返回一个新的字符串</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 字符串:下标:1   -- 获取字符串中指定下标对应的字符</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 字符串:下标     -- 从指定下标开始获取到字符串最后</span></span><br><span class="line"></span><br><span class="line">string='hello world'</span><br><span class="line">echo $&#123;string:1:4&#125;    # ello</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="4-shell数组"><a href="#4-shell数组" class="headerlink" title="4.shell数组"></a>4.shell数组</h5><p>在 Shell 中，用括号来表示数组，数组元素用”空格”符号分割开。定义数组的一般形式为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 数组名=(元素1 元素2 元素3 ...)</span></span><br><span class="line">names=(小明 小红 大黄 Tom)</span><br><span class="line">names2=(</span><br><span class="line">'小明'</span><br><span class="line">'小红'</span><br><span class="line">'大黄'</span><br><span class="line">'Tom'</span><br><span class="line">)</span><br><span class="line">names3[0]=小明</span><br><span class="line">names3[1]=小红</span><br><span class="line">names3[2]=大黄</span><br><span class="line">names3[3]=Tom</span><br></pre></td></tr></table></figure>
+
+<h6 id="1）获取数组元素：-数组-下标"><a href="#1）获取数组元素：-数组-下标" class="headerlink" title="1）获取数组元素：${数组[下标]}"></a>1）获取数组元素：${数组[下标]}</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $&#123;names[1]&#125;    # 小红</span><br></pre></td></tr></table></figure>
+
+<h6 id="2）获取数组的长度"><a href="#2）获取数组的长度" class="headerlink" title="2）获取数组的长度"></a>2）获取数组的长度</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nums=(100 200 300 400)</span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取数组长度</span></span><br><span class="line">length=$&#123;#nums[@]&#125;</span><br><span class="line">length=$&#123;#nums[*]&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 获取数组指定下标对应的元素的长度</span></span><br><span class="line">length2=$&#123;#num[n]&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="5-运算符"><a href="#5-运算符" class="headerlink" title="5.运算符"></a>5.运算符</h5><p>shell中支持的运算符有:  算术运算符、关系运算符、布尔运算符、字符串运算符</p>
+<h6 id="1）算术运算符：-，-，-，-，"><a href="#1）算术运算符：-，-，-，-，" class="headerlink" title="1）算术运算符：+，-，*，/，%"></a>1）算术运算符：+，-，*，/，%</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果想要在shell完成数值运算，运算的语法:  `expr 运算表达式`; 并且运算符两边必须加空格</span></span><br><span class="line">re1=10+20</span><br><span class="line">echo $&#123;re1&#125;    # 10+20</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1.加法运算</span></span><br><span class="line">re2=`expr 10 + 20`    </span><br><span class="line">echo $&#123;re2&#125;    # 30</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.减法运算</span></span><br><span class="line">re3=`expr 10 - 20`</span><br><span class="line">echo $&#123;re3&#125;	   # -10</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.乘法运算</span></span><br><span class="line">re4=`expr 10 \* 20`   # 注意:使用*作为乘法运算符的时候需要前面加\</span><br><span class="line">echo $&#123;re4&#125; 	# 200</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.除法运算</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 小数除法运算: `<span class="built_in">echo</span> <span class="string">"scale=小数点位数;数值1 / 数值2"</span>|bc`</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 整数除法运算: `expr 数值1 / 数值2`</span></span><br><span class="line">re5=`echo "scale=2;7 / 3"|bc`</span><br><span class="line">echo $re5</span><br><span class="line"></span><br><span class="line">re6=`expr 5 / 2`</span><br><span class="line">echo $re6</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5.求余数</span></span><br><span class="line">re7=`expr 10 % 3`</span><br><span class="line"></span><br><span class="line">re8=`echo "10.2 + 5.1"|bc`</span><br><span class="line">echo $re8</span><br></pre></td></tr></table></figure>
+
+<h6 id="2）-关系运算符-比较运算符-，比较的是数字大小"><a href="#2）-关系运算符-比较运算符-，比较的是数字大小" class="headerlink" title="2） 关系运算符(比较运算符)，比较的是数字大小"></a>2） 关系运算符(比较运算符)，比较的是数字大小</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -eq  ---  等于,相当于 ==</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -ne  ---  不等于,相当于!=</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -gt  ---  大于</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -lt  ---  小于</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -ge  ---  大于等于</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -le  ---  小于等于</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 使用语法: [ 值1 关系运算符 值2 ]</span></span><br><span class="line">a=100</span><br><span class="line">b=10</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关系运算符要配合<span class="keyword">if</span>语句或者循环语句使用</span></span><br><span class="line">if [ $a -gt $b ]</span><br><span class="line">then</span><br><span class="line">	echo a大于b</span><br><span class="line">else </span><br><span class="line">	echo a不大于b</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h6 id="3）布尔运算符-逻辑运算符"><a href="#3）布尔运算符-逻辑运算符" class="headerlink" title="3）布尔运算符(逻辑运算符)"></a>3）布尔运算符(逻辑运算符)</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> !    --  逻辑非运算</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -o   --  逻辑或运算</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -a   --  逻辑与运算</span></span><br><span class="line"></span><br><span class="line">age=18</span><br><span class="line">score=95</span><br><span class="line"><span class="meta">#</span><span class="bash"> 参加比赛的条件：分数大于90分并且年龄大于等于18岁</span></span><br><span class="line">if [ $age -ge 18 -a $score -gt 90 ]</span><br><span class="line">then</span><br><span class="line">	echo 可以参见比赛</span><br><span class="line">else</span><br><span class="line">	echo 不能参加比赛</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h6 id="4）字符串运算符"><a href="#4）字符串运算符" class="headerlink" title="4）字符串运算符"></a>4）字符串运算符</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> [ 字符串1 = 字符串2 ]    -- 判断两个字符串是否相等</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [ 字符串1 != 字符串2 ]   -- 不相等</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [ -z 字符串]   -- 判断字符串长度是否为0</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [ -n <span class="string">"字符串"</span> ]    -- 判断字符串长度是否不为0</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> [ $ 字符串 ]   -- 判断字符串是否是空串</span></span><br><span class="line"></span><br><span class="line">a="abc"</span><br><span class="line">b="123"</span><br><span class="line"></span><br><span class="line">if [ $a = $b ]</span><br><span class="line">then</span><br><span class="line">    echo a和b相等</span><br><span class="line">else</span><br><span class="line">    echo a和b不相等</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">a=""</span><br><span class="line">if [ -n "$&#123;a&#125;" ]</span><br><span class="line">then</span><br><span class="line">    echo a的长度不为0</span><br><span class="line">else</span><br><span class="line">    echo a的长度为0</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="6-if语句"><a href="#6-if语句" class="headerlink" title="6. if语句"></a>6. if语句</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">语法1：</span><br><span class="line">if 条件语句</span><br><span class="line">then</span><br><span class="line">    满足条件执行的代码</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">语法2:</span><br><span class="line">if 条件语句</span><br><span class="line">then</span><br><span class="line">    满足条件执行的代码</span><br><span class="line">else</span><br><span class="line">    不满足条件执行的代码</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">语法3：</span><br><span class="line">if 条件语句1</span><br><span class="line">then </span><br><span class="line">    代码块1</span><br><span class="line">elif 条件语句2</span><br><span class="line">then</span><br><span class="line">    代码块2</span><br><span class="line">elif 条件语句3</span><br><span class="line">then </span><br><span class="line">    代码块3</span><br><span class="line">else</span><br><span class="line">    代码块N</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="7-for循环"><a href="#7-for循环" class="headerlink" title="7. for循环"></a>7. for循环</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">语法:</span><br><span class="line">for 变量 in 序列</span><br><span class="line">do</span><br><span class="line">    循环体</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 遍历字符串</span></span><br><span class="line">for char in "hello word"</span><br><span class="line">do</span><br><span class="line">    echo 循环体char: $&#123;char&#125;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 遍历数组</span></span><br><span class="line">arr1=(10 20 "abc")</span><br><span class="line">for x in $&#123;arr1[@]&#125;</span><br><span class="line">do</span><br><span class="line">    echo 循环体2x: $&#123;x&#125;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 遍历多个值</span></span><br><span class="line">for x in 10 20 "你好" 123</span><br><span class="line">do</span><br><span class="line">    echo 循环体3：$&#123;x&#125;</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-while循环"><a href="#8-while循环" class="headerlink" title="8. while循环"></a>8. while循环</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">语法:</span><br><span class="line">while 条件语句</span><br><span class="line">do</span><br><span class="line">    循环体</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 遍历字符串</span></span><br><span class="line">str1="helloWorld!"</span><br><span class="line">index=0</span><br><span class="line">len=$&#123;#str1&#125;</span><br><span class="line">while [ $index -lt $len ]</span><br><span class="line">do</span><br><span class="line">    echo $&#123;str1:$&#123;index&#125;:1&#125;</span><br><span class="line">    index=`expr $&#123;index&#125; + 1`</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 计算1+2+3+...+100</span></span><br><span class="line">num=1</span><br><span class="line">sum=0</span><br><span class="line">while [ $&#123;num&#125; -le 100 ]</span><br><span class="line">do</span><br><span class="line">    sum=`expr $&#123;sum&#125; + $&#123;num&#125;`</span><br><span class="line">    num=`expr $&#123;num&#125; + 1`</span><br><span class="line">done</span><br><span class="line">echo 1+2+3+...+100 = $&#123;sum&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 死循环</span></span><br><span class="line">while true</span><br><span class="line">do</span><br><span class="line">    read -p "请输入一个数字:" num</span><br><span class="line">    if [ $&#123;num&#125; == 100 ]</span><br><span class="line">    then</span><br><span class="line">        break</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-函数"><a href="#9-函数" class="headerlink" title="9.函数"></a>9.函数</h5><h6 id="1）函数的声明和调用"><a href="#1）函数的声明和调用" class="headerlink" title="1）函数的声明和调用"></a>1）函数的声明和调用</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.函数的声明</span></span><br><span class="line">声明的语法：</span><br><span class="line">函数名()&#123;</span><br><span class="line">    函数体</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">调用函数语法:  函数名</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">声明函数</span></span><br><span class="line">func1()&#123;</span><br><span class="line">    echo 你好函数1</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash">调用函数</span></span><br><span class="line">func1</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.有参数的函数</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 声明的时候不需要形参, 直接在函数体中通过<span class="string">'$&#123;N&#125;'</span>来获取第N个实参</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 调用的时候:  函数名 实参1 实参2 实参3 ...</span></span><br><span class="line">func2()&#123;</span><br><span class="line">    echo 函数2被调用</span><br><span class="line">    echo 第一个参数: $&#123;1&#125;</span><br><span class="line">    echo 第二个参数: $&#123;2&#125;</span><br><span class="line">    echo 第三个参数: $&#123;3&#125; </span><br><span class="line">&#125;</span><br><span class="line">func2 10 20 "abc"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.函数的返回值</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">return</span> 数字   - 数字的范围是0~255</span></span><br><span class="line">func3()&#123;</span><br><span class="line">    echo 函数3被调用</span><br><span class="line">    return 256</span><br><span class="line">    #a=`expr 100 + 200`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func3</span><br><span class="line">echo $&#123;?&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/77-%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E7%9A%84%E8%AE%BE%E7%BD%AE%E3%80%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/77-%E5%85%8D%E5%AF%86%E7%99%BB%E9%99%86%E7%9A%84%E8%AE%BE%E7%BD%AE%E3%80%82/" class="post-title-link" itemprop="url">77-免密登陆的设置。</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>#一。自己总结的</p>
+<p>什么是ssh：ssh是Secure Shell（安全外壳协议）的缩写，建立在应用层</p>
+<p>和传输层基础上的安全协议。<br>生成一个公共的钥匙就可以访问而不需要密码了。<br>1.cd 到.ssh所在的目录。<br>2.一般都在c:\users\adminstrator.ssh<br>3.如果不在就用mkdir 指令创建一个.ssh文件夹，因为用直接创建的方式</p>
+<p>是不能够创建的。最好用mkdir来创建这个目录。<br>4.然后进去到这个文件夹后直接执行 ssh-keygen （ssh-keygen -t rsa -b 2048 -c “邮箱”一直回车。）<br>5.一直按回车知道生成一段密文。<br>6.然后你在 ls .ssh 这个文件夹，你会查看到三个文件。其中一个</p>
+<p>know_hosts这个和免密登陆没有关系，你不要去管他。<br>7.另外两个是 id_rsa(私钥匙)   id_rsa.pub（公钥匙） 一个是私人钥匙</p>
+<p>，一个是公共的钥匙。  打个比喻私钥匙就是钥匙  公钥匙就像一把锁，</p>
+<p>而这把锁你可以把他给任何想要免密登陆的用户，免密登陆的时候系统会</p>
+<p>拿这把锁来和你的私钥进行匹配，这样就会开锁成功，就实现了所谓的免</p>
+<p>密码登陆。<br>8.然后 用vim 打开公钥匙复制 添加到需要密码的公共钥匙里，这样就是</p>
+<p>实现了免密码（如过将公钥复制粘贴到码云的ssh里面，那么我们对仓库进</p>
+<p>行管理的时候就不需要密码了，从服务器同步到本地的时候就选择ssh那个</p>
+<p>地址，就不需要密码了）<br>9.使用自己的公钥对阿里云实现免密登陆：<br>（1）第一步还是在服务器里进入到 cd  .ssh这个文件夹里面。（没有就</p>
+<p>创建）<br>（2）然后进入到这个文件夹下面的 authorizedz_keys 这个文件夹里面，</p>
+<p>如果你的云服务器.ssh 的里面没有这个文件你自己手动创建一个一模一样</p>
+<p>的文件，然后打开这个文件， 在这个里面添加你这台计算机的公钥，那么</p>
+<p>用你这台计算机登陆当前这个阿里云就不需要密码，如果你想要在其他的</p>
+<p>电脑上登陆阿里云也不需要密码，那么你把其他计算机的公钥也添加到这</p>
+<p>里面，也可以进行免密登陆。<br>注意：我换了密钥  在ssh中有一个know_hosts文件删除就可以重新连接了<br>#二。网上的解释。<br>sh密钥认证<br>1.在主机和从机上执行：ssh-keygen<br>2.在从机上执行：scp id.rsa.pub root＠主机地址-/.ssh/master.ｐｕｂ</p>
+<p>（上面这条指令是将从机上的id＿rsa.pub文件拷贝传递给到主机的.ssh文</p>
+<p>件夹下，并且命名为master.pub）<br>3.在主机中的.ssh文件夹中创建authorized keys文件：touch </p>
+<p>authorized-keys<br>4.修改文件authorized ＿keys的权限：chｍod 600 authorized-keys<br>5.将master.pub放进authorized keys文件中：cat master.pub　&gt;&gt;　</p>
+<p>authorizedkeys<br>6.在操作主机的时候，需要主机能够自己免密访问自己就将自己的公钥放</p>
+<p>在自己的authorized keys文件中<br>#三。原理<br>公钥和私钥都属于非对称加密算法的一个实现，这个加密算法的信息交换过程是：</p>
+<p>1) 持有公钥的一方（甲）在收到持有私钥的一方（乙）的请求时，甲会在自己的公钥列表中查找是否有乙的公钥，如果有则使用一个随机字串使用公钥加密并发送给乙。</p>
+<p>2) 乙收到加密的字串使用自己的私钥进行解密，并将解密后的字串发送给甲。</p>
+<p>3) 甲接收到乙发送来的字串与自己的字串进行对比，如过通过则验证通过，否则验证失败。</p>
+<p>  非对称加密算法不能使用相同的密钥进行解密，也就是说公钥加密的只能使用私钥进行解密。<br>（此段话转自博主 很可以1101）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/76-git%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/76-git%E5%B8%B8%E7%94%A8%E7%9A%84%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">76-git常用的指令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>把一个文件夹变成了git仓库后，不能再在这个里面新建仓库了。</p>
+<h1 id="git常用指令"><a href="#git常用指令" class="headerlink" title="git常用指令"></a>git常用指令</h1><h2 id="1-基本指令"><a href="#1-基本指令" class="headerlink" title="1.基本指令"></a>1.基本指令</h2><p><code>git init</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  新建git仓库<br><code>git add 文件/文件夹</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  将文件添加到缓存区中<br><code>git add -A</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; — 添加所有内容到缓存区中<br><code>git status</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;———    查看git状态<br><code>git commit -m  ‘提交信息’</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  将缓存区中的内容全部提交到git本地仓库中  </p>
+<p><code>git log</code>        ——-    查看提交日志  </p>
+<p><code>git reset  -- hard   HEAD</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——   让工作目录中的内容和仓库中的内容保持一致<br><code>git reset  --hard HEAD^</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到上一个版本<br><code>git  reset  -- hard 版本号</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;——  回到指定的版本  </p>
+<p><code>git checkout  文件名</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ——  从暂存区中恢复工作目录中的内容(让工作区中的指定文件，回到上次提交的时候的状态)  </p>
+<p><code>git clone &lt;url&gt;</code> - 将服务器上的项目(仓库)克隆 (使用https地址需要输入密码，使用ssh地址需要添加公钥)  </p>
+<p><code>git remote add origin 地址</code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 关联远程仓库(只需要关联一次)</p>
+<p><code>git push [-u] origin master</code>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;—– 提交(-u在第一次提交分支的时候才用)  </p>
+<p><code>git push</code>         —  将本地仓库的内容提交到远程仓库master分支上</p>
+<p><code>git push origin 分支名</code>       —  将本地仓库的内容提交到远程仓库对应的分支上, 如果分支不存在会自动创建</p>
+<p><code>git pull</code>          —  将远程仓库中的内容更新到本地仓库和工作区中<br><strong>注意：</strong><br>切换分支，push,pull，这些操作前要保证工作区是clean的。</p>
+<h2 id="2-分之管理"><a href="#2-分之管理" class="headerlink" title="2.分之管理"></a>2.分之管理</h2><p>创建仓库会默认给我们创建一个master分之,这个分之一般作为提交和发布分之;开发一般会自己创建一个develop分之，用来开发和测试;多人协作的时候还可能根据不同的人或者(不同的功能)创建不同的分之，用来独立开发  </p>
+<p>常见分之： master(主要是合并develop), develop(主要合并下面的其他分支), 功能/人员分之(开发)  </p>
+<p><code>git branch [-a]</code>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        - 查看分之<br><code>git branch 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 创建分之<br><code>git checkout   分支名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-   切换分之<br><code>git checkout -b 分之名</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    - 切换并创建新的分之<br><code>git diff    分之1  分之2</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 查看两个分之之间的差异<br><code>git merge 分之名</code>            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- 让当前分之和指定分之进行合并     </p>
+<p>注意: 切换分之、push、pull，这些操作前要保证工作区是clean  </p>
+<p>怎么避免冲突：  不要发生多个分之对同一个文件在同一个版本下进行修改(和同伴确认和商量)</p>
+<p>图片关系：<br><img src="https://upload-images.jianshu.io/upload_images/4956968-e40ee49e29ab1acf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="tianruo_2019-12-19-637123619351081442.jpg"></p>
+<p>注意：当两个人对同一个文件进行修改，第一个修改了已经提交到网络仓库的时候，第二个再在本地提交的时候是无法提交的，这个时候需要把网络的拉下来  再次提交，这样就不会报错了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/75-%E6%80%BB%E7%BB%93%E7%9A%84linux%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/75-%E6%80%BB%E7%BB%93%E7%9A%84linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">75-总结的linux命令</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>##Linux指令</p>
+<p>##1.日常指令</p>
+<h3 id="1-cd指令-进入文件夹"><a href="#1-cd指令-进入文件夹" class="headerlink" title="1. cd指令  -  进入文件夹"></a>1. cd指令  -  进入文件夹</h3><p>cd文件夹路径（路径可以是绝对地址也可以是相对地址）-进入到指定路径对应的文件夹<br>cd ..    返回上层目录<br>cd /     进入系统根目录<br>cd ~    进入电脑根目录</p>
+<h3 id="2-ls指令-显示当前目录中的内容"><a href="#2-ls指令-显示当前目录中的内容" class="headerlink" title="2. ls指令  -  显示当前目录中的内容"></a>2. ls指令  -  显示当前目录中的内容</h3><p>ls——&gt;直接显示当前文件夹中的内容的名字（隐藏文件和文件夹看不到）<br>ls -l——&gt;直接显示当前文件夹中的内容的名字（隐藏文件和文件夹看不到）<br>ls -h——&gt;显示当前文件夹中的内容和内容的基本信息（隐藏文件和文件夹看不到）</p>
+<p>ls -a——&gt;显示当前文件夹中所有的内容（包括隐藏文件）<br>ls -R——&gt;递归显示当前目录以及当前目录下所有的子目录中的内容<br>ls -r——&gt;内容倒序显示<br>ls -S/-t——&gt;显示文件夹中的内容，并且内容按大小/时间从大到小排序<br>ls -Sr——&gt;按大小从小到大排序<br>ls -srlh——&gt;按大小从小到大排序，并且显示内容的基本信息</p>
+<p>###3. pwd指令<br>pwd——&gt;查看当前目录的绝对路径</p>
+<p>###4.文件操作<br>######1)touch指令  新建文件<br>touch 文件路径——&gt;在指定位置创建指定文件</p>
+<blockquote>
+<p>touch a.txt-在当前目录下新建一个文件a.txt<br>touch ../a.txt-在当前目录的上层目录新建一个文件a.txt<br>touch /home/a/a.txt-在根目录下home目录中的a目录里面创建一个文件a.txtl</p>
+</blockquote>
+<p>######2)cat指令  查看文件内容(读文件)<br>cat 文件路径——&gt;读取指定路径对应的文件的内容</p>
+<p>######3)vim指令<br>vim 文件路径——&gt;使用vim打开文件</p>
+<p>按  i  插入内容   再  esc  :  wq 退出</p>
+<p>###5文件操作<br>mkdir 文件路径——&gt;在指定位置创建文件夹,若没有会报错<br>mkdir -p 文件路径——&gt;在指定路径创建指定文件夹,若没有就创建<br>mkdir -p a/{b,c,…}/{d,e,f,g,…}——&gt;在当前位置创建a,在a内创建多个文件夹,在多个文件夹内再创建多个相同的文件夹</p>
+<p>###6删除文件和文件夹<br>######1)rm指令  删除文件和文件夹<br>rm 文件路径——&gt;删除指定文件（删除的时候会循环是否确定删除，y-同意，n-不同意）<br>rm -f 文件路径——&gt;删除指定文件（删除的时候不询问）<br>rm -r 文件夹路径——&gt;删除指定文件刻</p>
+<p>######2)rmdir指令  删除空文件夹<br>rmdir 文件夹路径——&gt;删除空文件夹</p>
+<p>###7拷贝和移动<br>######1)拷贝<br>cp 文件路径1 文件路径2——&gt;将文件1中的内容复制粘贴到文件2（如果文件2不存，会自动创建；如果存在会询问是否覆盖）<br>cp 文件路径 文件夹路径——&gt;将指定文件复制粘贴到指定文件夹中<br>cp -r 文件夹路径1 文件夹路径2——&gt;将文件夹1复制粘贴到文件夹2中</p>
+<p>######2)移动<br>mv 文件路径1 文件路径2——&gt;将文件1移动到文件2所在的位置<br>mv 文件名1 文件名2——&gt;将文件1重命名为文件2(若两个文件同时存在同一文件夹中,则重命名后文件2会被删除,文件1会被重命名)<br>mv 文件路径 文件夹路径——&gt;将文件直接移动到指定文件夹中<br>mv 文件夹路径1 文件夹路径2——&gt;将文件夹1移动到文件夹2中</p>
+<h3 id="8-history指令"><a href="#8-history指令" class="headerlink" title="8.history指令"></a>8.history指令</h3><p>获取指令的历史记录</p>
+<p>1.echo ‘HISTTIMEFORMAT=”%F %T “‘ &gt;&gt; ~/.bashrc  .         </p>
+<p>2.source ~/.bashrc   </p>
+<p>3.直接history–显示当前系统已经执行过的所有的指令，如果想要显示历史记录的时候，显示指令 执行的时间，需要对文件系统根目录下的文件~/.bashrc文件进行修改。</p>
+<h3 id="9-创建链接"><a href="#9-创建链接" class="headerlink" title="9.创建链接"></a>9.创建链接</h3><h5 id="1-创建软链接"><a href="#1-创建软链接" class="headerlink" title="1.创建软链接"></a>1.创建软链接</h5><p>通过链接把文件的绝对路径存起来（绝对路劲—完整路径）。</p>
+<p>ln -s  源文件路径  软链接的路径。—给源文件在指定位置创建一个软连接（软连接的本质就是用来保存源文件绝对路径的一个文件，可以理解成windows中的快捷方式）（源文件删除软链接也无效了）</p>
+<p>注意：源文件路径必须写绝对路径。</p>
+<h5 id="2-创建硬链接"><a href="#2-创建硬链接" class="headerlink" title="2.创建硬链接"></a>2.创建硬链接</h5><p>ln    源文件路径  软链接的路径。给源文件在指定位置创建一个硬链接。（源文件的删除硬链接也是有效的。（本质就是加上他的文件名本身有两个引用，删除一个还有一个引用，所以文件是还在的，不会删除。））</p>
+<h6 id="3-注意"><a href="#3-注意" class="headerlink" title="3.注意"></a>3.注意</h6><p>如果删除或者移动源文件，软连接值接是无效的。</p>
+<p>硬链接的本质就是源文件内容的另外一个引用，所有删除或则移动源文件硬链接任然是有效的，只是在删除后，硬链接会变成普通非文件。</p>
+<p>###10进程相关的指令。</p>
+<h5 id="一-ps-指令"><a href="#一-ps-指令" class="headerlink" title="一 .ps 指令"></a>一 .ps 指令</h5><p>1.查看当前的进程状态–  ps<br>2.查看进程的状态– ps -aux/   p   ex常看当前的所有的进程的信息。<br>3.ps  -aux|grep  进程名或则id名。 功能是根据进程名或则id查看指定的进程。</p>
+<h5 id="二-top指令"><a href="#二-top指令" class="headerlink" title="二.top指令"></a>二.top指令</h5><p>1.top实时查看当前所有的进程信息和系统的信息。退出就是ctrl +C<br>2.top -p PID1,PID2  —实时监测指定的程。</p>
+<p>#####三.free指令<br>1.free–显示当前系统的内存信息，默认是KB</p>
+<p>2.free -单位   显示当前系统的内存信息，以指定单位来显示。</p>
+<h5 id="四-kill指令"><a href="#四-kill指令" class="headerlink" title="四.kill指令"></a>四.kill指令</h5><p>1.kill   进程id   —杀死指定id进程。</p>
+<p>2.kill -1/9/15 进程id 以指定的方式杀死指定的进程，（1，表示不间断的重启，9，表示强制的杀死进程，15，表示正常结束进程。）</p>
+<p>3.pkill —-杀死指定进程对应的进程名，还是可以指定杀死的方式。</p>
+<p>4.kill  —杀死和进程名相关的所有的进程。</p>
+<p>5.uptime  —-查看系统的挂起的时间和当前的时间。–查看系统的基本信息。<br>注意：文件就不加斜杠了 路径开头必须加斜杠。<br>###11.用户管理<br>一个Linux可以有多个用户，也可以有多个用户组，用户对应的指令是user,也可以是多个用户组（group）,用户和用户组之间的关系是多对多。<br>1.users  –查看当前的用户。<br>2.groups  —查看分组<br>3.groupadd    分组名      –创建分组（管理员才能创建） 在系统目录etc中的group文件来查看当前的系统的所有的分组。<br>4.useradd  用户名    创建用户  =====       创建之后，系统汇自动在home之下创建一个和用户名同名的文件夹，还会再创建一个分组并且会自动创建和用户名同名的分组，并且将当前的用户名添加到分组中。<br>5.useradd -G  分组列表1，分组列表2 。。。。 用户名    创建制定用户，并且将用户添加到指定的分组中。<br>6.usermod  -G  分组1，分组2….用户名    修改用户的分组。<br>7.passwd   用户名   -修改用户密码（root权限）<br>8.su 用户名  切换账号(root登陆切换不需要密码，其他站好需要密码。)<br>9.sudo   –在命令前sudo司仪管理员的身份执行指令，不是所有的用户都可以通过sudu来以管理员的身份执行指令，如果想要必须加配置。<br>exit  —退出当前的账号。<br>（1）ubuntu  —需要将你的用户添加到sudo的分组中。<br>  (2)   redhat和c0ntos:  在他/etc/sudoers配置文件中添加代码。<br>        ## Allow root to run any commands anywhere<br>    root    ALL=(ALL)       ALL     #(默认有的)<br>    xiaoming ALL=(ALL)      ALL        #(自己添加的，xiaoming是用户名)</p>
+<p>###12.文件的权限。（ls  -lh  一共是十位）（前三位是自己的，中间是同组的，最后三位是其他用户的。）<br>默认情况下文件和文件夹的权限，文件所有者有读写权限，同组用户和其他用户都是只读的权限。<br><img src="https://upload-images.jianshu.io/upload_images/4956968-ac9c24ae0e4b1dac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="QQ截图20191217115657.png"></p>
+<p>1.第一位 ：   d  是目录 ， _  是文件 ，l 是链接<br>2.后面九位是三个一组 ：r 读  w 写  x 执行的权限。<br>（1）chmod   权限值   修改指定文件的权限修改成指定的值 。</p>
+<p>权限： rwx    r- -    rw -<br>权照二进利：111  100  110<br>权照值：        7      4      6<br>chmod   7 4  6   文件路径<br>(2)chomd[a,u,g,o] /[r,w,x] 文件地址  给指定文件对应的指定用户添加或则删除指定的权限，（a-所有的用户，u-文件所有者，g-同组用户，o-其他用户，<br>+表示添加权限，-表示剧除权限；r-表示读权限。w表示写权限.x表示执行权限）<br>列子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">chmod a-x文件地址-删除所有用户的执行权限</span><br><span class="line">chmod u+w文件地址-给文件所有者添加写的权限</span><br></pre></td></tr></table></figure>
+
+<p>###13日志管理<br>1.cat指令：<br>cat      文件   –直接查看文件所有的内容。<br>总结：查看文件内容的时候可以加参数。<br>2.查看部分的指令。<br>（1） –查看部分内容<br>head   -n   文件地址      显示指定文件前n行的内容。(n参数无效)<br>tail    -3  文件地址          显示指定文件后n行的内容。(n参数无效)</p>
+<p>(2)分页显示<br>less  文件    显示文件内容    通过快捷键控制文件显示的内容。（文件内容不会显示在shell或则终端里）<br>less  -N   显示文件内容，每次翻N行。<br>more  文件     按也显示文件的内容，通过快捷键控制，文件内容会打印在终端里。</p>
+<p>more-N文件-按页显示文件内容，每次翻页的时候翻N行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">快捷键：</span><br><span class="line">-按j向下一行</span><br><span class="line">-按k向上一行</span><br><span class="line">-按f向下翻一页</span><br><span class="line">-按b向上翻一页</span><br><span class="line">按9到全文开头</span><br><span class="line">·-按G到全文结尾</span><br><span class="line">·-按Q退出</span><br></pre></td></tr></table></figure>
+<p>###14.结果的处理<br>1.凡是有打印的结果的指令，我们都可以通过相关的指令处理过后再打印结果。<br>2.管道：对一个指令的结果进行额外的处理。就需要用到管道来进行处理。就是来指令分开来进行处理。<br>3.排序   –sort<br>  直接Sort   对结果进行排序。从小到大排序，将一行内容作为一个字符串，按字符串大小对内容进行排序，默认不区分大小写的。<br>cat a.txt|sort   —对a.txt的文件的内容从小到大排序显<br>示。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat a.txt Isort#对a.txt的文件内容从小到大排序显示</span><br><span class="line">sort的参数：</span><br><span class="line">-r-逆序</span><br><span class="line">-nk1    -数值大小排序</span><br><span class="line">-nk2   -字符大小排序（默认）</span><br><span class="line">cat a.txtlsort   -nk 1#对a.txt的文件内容按数字大小从小到大排序</span><br><span class="line">cat a.txtlsort   -rnk 1#对a.txt的文件内容按数字大小从大到小排序</span><br><span class="line">cat a.txtlsort   -nk 2#对a.txt的文件内容按字符大小从小到大排序（默认）</span><br><span class="line">cat a.txtlsort   -rnk 2#对a.txt的文件内容按字符大小从大到小排序</span><br></pre></td></tr></table></figure>
+<p>4.去重。uniq    如果需要去掉所有重复的行，先排序将所有的重复的行放在一起。<br>例如： cat a.txt|uniq     -去掉文件中相邻重复的行。<br>cat  a.txt|sort|uniq     去掉a.txt文件中所有重复的行。<br>5.awk   -获取取列<br>awk’{print$N1，$N2}’   –获取内容中第N1,N2列的数据。<br>6.重定向  –输出重定向    -&gt;/ 个&gt;&gt;    将指定指令执行的结果保存到指定的文件中，一个大于符号会覆盖源文件的内容，两个大于符号就是不会清除源文件，直接将结果追加到源文件中。</p>
+<p>一个大于符号就是删除原来的内容再加入，两个大于符号就是不删除原来的，加在后面。</p>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">history&gt;a.txt#将当前历史记录直接保存到a.txt文件中</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">将最常用的3个指令及其使用次数保存到a.txt文件中history lawk&#39;&#123;print $4&#125;&#39;lsort luniq-c I sort-rnk 1 I head-n3&gt;a.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">|</span><br></pre></td></tr></table></figure>
+<p>7.统计<br>wc -c/w/ -文件地址   统计指定文件中字符单词的数量。</p>
+<p>8.查找    –grep<br>grep   内容  文件   参数（行数）  -在指定的文件中查找指定的内容，返回文件中所有指定内容的行。并且告诉我是第几行。<br>grep   you  a.txt     获取a.txt中包含you的所有的行。</p>
+<p>grep 的参数：</p>
+<ul>
+<li>n    显示结果的时候显示行号。</li>
+<li>i      查找内容的时候忽略大小写。</li>
+<li>E-按正则表达式进行匹配<br>使用方法：grep-E  ‘正则表达式’ 文件<br>注意：Linux操作系统中正则表达式不支持：\d，\D，\w，\w，\s，\s，\b，\B；其他语法都支持。</li>
+</ul>
+<p>忽略字段    —grep  you  a.txt  -v   获取a.txt中不包括you的所有的行。</p>
+<p>执行有打印结果的指令|  grep  内容 |  -在指令执行结果中查找指定的内容。</p>
+<p>grep  -r  内容   文件夹地址     在指定文件夹中所有的文件中查找指定的内容。</p>
+<p>find  —找文件<br>find    文件夹路径   -name   文件名   在指定的文件夹下按文件名找指定的文件。</p>
+<p>find  dir1  -name   test.txt     在  dir1  这个文件中找指定的名字叫做 text.txt 的问价。<br>find dirl-name’*.txt’I#在文件夹dir1找后缀是txt的文件。</p>
+<p>find        文件路径        -size +/- 文件大小     在指定文件夹下找文件大小满足条件的所有的文件。</p>
+<p>find  ./   -size  +8k   -size  -9k   (查找文件夹中大于8k小于9k的所有的文件，文件大小如果是小数算的时候四舍五入向上取整数，)</p>
+<p>find 文件夹路径-size+/-文件大小-在指定文件夹下找文件大小满足条件的所有的文件<br>find dirl-size+4k#查找在文件夹dir1中所有大于4k的文件<br>find dirl-size-4k#查找在文件夹dir1中所有小于4k的文件<br>find dirl-size+5k-size-10k#查找在文件夹dir1中所有大于5k并且小于10k的文件（文件大小如果是小数，算的时候向上取整）</p>
+<p>find dirl-size+4k-name’*.txt’#查找在文件夹dir1中所有大于4k的txt文件。<br>9.which  指令   精确查找指令对应的可执行的文件的路径，<br>whereis  指令   查找和指令相关的所有的文件的路径<br>man  指令名    获取指定指令的使用的手册。<br>指令名  –help    获取指定指令的帮助的文档。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/73-%E5%89%8D%E7%AB%AF%E7%96%91%E6%83%91%E7%9A%84%E6%80%BB%E7%BB%93%E4%B8%9C%E8%A5%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/73-%E5%89%8D%E7%AB%AF%E7%96%91%E6%83%91%E7%9A%84%E6%80%BB%E7%BB%93%E4%B8%9C%E8%A5%BF/" class="post-title-link" itemprop="url">73-前端疑惑的总结东西</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一。零散的小知识点</p>
+<ol>
+<li>lable 标签就是关联的标签，中的for 写你要关联的id.</li>
+</ol>
+<p>2.margin-left:auto  margin-right:auto  水平居中<br>3.list-style:none   去掉表单的点。<br>4.三目运算符 表达式? 值1：值2<br>5..复选框是否选中是绑定change事件。<br>6.下标的的遍历删除问题，直接减一，让它取的还是原来那个。<br>7.parseAInt 转整数<br>8.parseFloat 转小数<br>二。js中的Dom节点，JQuery,Vue,Ajax<br>1.DOM获取的节点是对单个进行操作的，使用时候过于的麻烦。<br>(1)获取：document.getElementById(id属性)<br>(2)操作：直接点.属性名<br>2.JQuery是js封装的是中通过$(选择器)—将一个标签变成一个容器，如果一个div中有多个div那个通过.JQuery就可以的到这个容器。<br>(1)j创建：jQuery是通过对象来操作的，$(选择器)  -（先安装有，或本地文件导入jQuery）<br>(2)操作：除开几个特殊的，都是    jQ对象.attr(“属性名”)   引号里写属性名，赋值就是修改。<br>3.Vue–是js封装的来处理数据渲染的问题的。（导入Vue）<br>(1)创建：<br>          new vue({<br>                el:  “ “   –引号写你要将数据方法等用在那个选择器里面。<br>                 data:{ }–大括号里写数据<br>                method:{ }–大括号里写方法（函数）<br>                computed：{ }–大括号里写方法（函数）–但这个最本质的是为了获取这个函数的返回值然后去使用。又称计算属性。<br>            })<br>**注意：在vue中要遍历循环只能用v -for    in  取出的是值不是下标。<br>(4).Ajax的使用。<br>$.ajax({<br>    url:数据接口地址，<br>    type:请求方式(get/post)<br>    data:请求数据(客服端传递给服务器的数据，值是对象,请求的时候需要参数就传参。)<br>    success:请求成功的回调函数（函数）。<br>    error:请求失败的回调函数。})</p>
+<p>三。this是什么？<br>(1).节点绑定事件中：this就是事件源<br><button onclick="func1()">按钮2</button><br>        <script type="text/javascript"><br>            function func1(){<br>                alert('你好!')<br>                alert('hello!')<br>                console.log(this)<br>//打印这个this是windows对象<br>            }<br>        </script><br>(2).JQuery中事件的绑定。 this  也是事件源<br><button onclick="func1()">按钮2</button><br>        <script type="text/javascript"><br>            function func1(){<br>                alert('你好!')<br>                alert('hello!')<br>                console<br>.log(this)<br>//打印这个this是windows对象<br>            }<br>        </script><br>(3)js对象中的this 就是对象本身。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/72-%E9%98%BF%E9%87%8C%E5%B7%A5%E5%85%B7rap2%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/72-%E9%98%BF%E9%87%8C%E5%B7%A5%E5%85%B7rap2%E6%95%B0%E6%8D%AE%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">72-阿里工具rap2数据接口工具</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://upload-images.jianshu.io/upload_images/4956968-f44c7b0ef72f4f9f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="rap数据.png"></p>
+<p>2.<img src="https://upload-images.jianshu.io/upload_images/4956968-0a2f5a57c3bda8c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Q说明.png"><br>3、<img src="https://upload-images.jianshu.io/upload_images/4956968-396927bb7d70f4c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="说明.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/71-JS-%E4%B8%AD-Vue%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/71-JS-%E4%B8%AD-Vue%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" class="post-title-link" itemprop="url">71-JS-中-Vue计算属性</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>computed属性 -  对象,对象的属性名随便命名, 属性值必须函数, 函数的返回值就是使用属性的值<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+     &lt;meta charset=&quot;UTF-8&quot;&gt;
+     &lt;title&gt;&lt;/title&gt;
+     &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+     &lt;style type=&quot;text/css&quot;&gt;
+         .name{
+             color: red;
+             font-size: 30px;
+         }
+         .price{
+             color: seagreen;
+             font-size: 20px;
+
+</code></pre></li>
+</ol>
+<pre><code>        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;app1&quot;&gt;
+        &lt;div class=&quot;goods&quot; v-for=&quot;goods in goodsList&quot; v-bind:style=&quot;background&quot;&gt;
+            &lt;p class=&quot;name&quot;&gt;{{goods.name}}&lt;/p&gt;
+            &lt;p class=&quot;price&quot;&gt;￥{{goods.price}}&lt;/p&gt;
+            &lt;hr /&gt;
+        &lt;/div&gt;
+
+        &lt;p&gt;总价:{{totalPrice}}&lt;/p&gt;
+        &lt;p&gt;{{num1+num2}}&lt;/p&gt;
+
+        &lt;input type=&quot;color&quot; v-model=&quot;color&quot; /&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        var app1 = new Vue({
+            el: &apos;#app1&apos;,
+            data:{
+                color:&apos;#ff0000&apos;,
+                goodsList: [
+                    {name:&apos;辣条&apos;, price:1},
+                    {name:&apos;泡面&apos;, price:3.5},
+                    {name:&apos;二锅头&apos;, price:8},
+                    {name:&apos;火腿肠&apos;, price:2},
+                    {name:&apos;卤蛋&apos;, price:1}
+                ],
+                num1: 100,
+                num2: 200
+            },
+            computed:{
+                background: function(){
+                    return &apos;background-color:&apos;+this.color+&apos;;&apos;
+                },
+                totalPrice:function(){
+                    var sum1 = 0
+                    for(var goods of this.goodsList){
+                        sum1 += goods.price
+                    }
+
+                    return sum1
+                }
+            }
+        })
+
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+<!--goodsList: [
+                        {name:'辣条', price:1},
+                        {name:'泡面', price:3.5},
+                        {name:'二锅头', price:8},
+                        {name:'火腿肠', price:2}
+                    ]-->
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/70-JS-%E4%B8%AD-Vue%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/70-JS-%E4%B8%AD-Vue%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A/" class="post-title-link" itemprop="url">70-JS-中-Vue事件的绑定</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.methods中的函数绑定。<br>v-on:click=”vuemethod”<br>2.事件捕获在子标签中绑定事件的时候  .stop<br>3.注意：创建vue对象的时候，添加到data,message,data,metod等中所有的属性，本质都会绑定到vue上。vue.属性  就能用。在methods中的函数的this都是vue对象。this.  就能拿到这里面的属性。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!---------------1.绑定事件------------------&gt;
+        &lt;div id=&quot;app1&quot;&gt;
+            &lt;!--直接和methods中的函数绑定--&gt;
+            &lt;button v-on:click=&quot;buttonAction&quot;&gt;按钮&lt;/button&gt;
+
+            &lt;br /&gt;
+            &lt;button v-on:click=&quot;num++&quot;&gt;+&lt;/button&gt;
+            &lt;font&gt;{{num}}&lt;/font&gt;
+            &lt;button v-on:click=&quot;num--&quot;&gt;-&lt;/button&gt;
+
+            &lt;div v-on:click=&quot;div1Action&quot; style=&quot;width: 200px; height: 200px; background-color: aquamarine;&quot;&gt;
+                &lt;!--绑定click事件并且捕获--&gt;
+                &lt;div v-on:click.stop=&quot;div2Action&quot; style=&quot;width: 100px; height: 100px; background-color: red;&quot;&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var app1 = new Vue({
+                el: &apos;#app1&apos;,
+                data:{
+                    num: 100
+                },
+                methods:{
+                    buttonAction: function(){
+                        //this是当前Vue对象
+                        alert(&apos;按钮被点击&apos;)
+                    },
+                    addAction:function(){
+                        this.num ++ 
+                    },
+                    subAction: function(){
+                        this.num -- 
+                    },
+                    div1Action:function(evt){
+                        console.log(arguments)
+                        //methods中的函数中的this都是当前Vue对象
+                        console.log(this)
+                        alert(&apos;div1被点击&apos;)
+
+
+                    },
+                    div2Action:function(evt){
+                        alert(&apos;div2被点击&apos;)
+
+                        //捕获事件
+                        //evt.stopPropagation()
+                    }
+
+                }
+
+            })
+
+            //注意: 创建Vue对象的时候，添加到data、methods、computed中所有的属性，本质都会绑定到Vue对象上
+            console.log(&apos;num:&apos;, app1.num)
+            app1.buttonAction()
+
+        &lt;/script&gt;
+
+
+
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="2m雨天"
+      src="/images/kebi.jpg">
+  <p class="site-author-name" itemprop="name">2m雨天</p>
+  <div class="site-description" itemprop="description">菜鸟的编程自学之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+  <div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32703006&auto=1&height=66"></iframe>
+  
+  </div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">2m雨天</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">178k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:42</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="255,0,0" opacity='0.4' zIndex="-2" count="300" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+  <script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

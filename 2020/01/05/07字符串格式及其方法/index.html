@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://mayu123mayu.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":20,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="#一.字符串单双引号，字符串是有序的，但是是不可变的python中只有这个概念没有对应的数据的类型，引号里面只有一个元素的字符串可以看成一个字符。####1.普通的字符：原则上可以通过键盘输入或则从其他地方复制粘贴的都可以作为字符。普通字符：在字符串中能过代表符号本身的字符。（没有特殊意义和特殊功能的字符）。####2.转义字符：在字符串中有特殊意义和功能的符号的组合，一般是以\开头的 \n —–">
+<meta property="og:type" content="article">
+<meta property="og:title" content="07字符串格式及其方法">
+<meta property="og:url" content="http://mayu123mayu.github.io/2020/01/05/07%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="小马哥">
+<meta property="og:description" content="#一.字符串单双引号，字符串是有序的，但是是不可变的python中只有这个概念没有对应的数据的类型，引号里面只有一个元素的字符串可以看成一个字符。####1.普通的字符：原则上可以通过键盘输入或则从其他地方复制粘贴的都可以作为字符。普通字符：在字符串中能过代表符号本身的字符。（没有特殊意义和特殊功能的字符）。####2.转义字符：在字符串中有特殊意义和功能的符号的组合，一般是以\开头的 \n —–">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-01-05T04:31:52.194Z">
+<meta property="article:modified_time" content="2020-01-05T04:16:42.000Z">
+<meta property="article:author" content="2m雨天">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mayu123mayu.github.io/2020/01/05/07%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>07字符串格式及其方法 | 小马哥</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+<link rel="alternate" href="/atom.xml" title="小马哥" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    
+    
+<a href="https://your-url" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小马哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">因为到过地狱才知道天堂的美好</p>
+
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home  //"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-users"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive //归档"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/07%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          07字符串格式及其方法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:42" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>#一.字符串<br>单双引号，字符串是有序的，但是是不可变的<br>python中只有这个概念没有对应的数据的类型，引号里面只有一个元素的字符串可以看成一个字符。<br>####1.普通的字符：<br>原则上可以通过键盘输入或则从其他地方复制粘贴的都可以作为字符。<br>普通字符：在字符串中能过代表符号本身的字符。（没有特殊意义和特殊功能的字符）。<br>####2.转义字符：<br>在字符串中有特殊意义和功能的符号的组合，一般是以\开头的<br> \n —–换行<br>\ ——  表示 引号 本身<br> \t —– 表示一个缩进，就是一个tab键<br> \ ——表示一个反斜杆，特殊的意义消失<br>\u四位的16进制数–字符–获取编码值对应的字符（编码）–获取四位十六进制数作为编码值对应的字符。<br>str6=”abc”<br>abc=’st&#39;r’<br>注意所有的转义字符的长度都是一。<br>print(“\uaa72”)<br>####3阻止转义：<br>在字符串的最前面加r/R,可以让当前的所有的转义的字符都是失效的，所有的符号都是表示他本身</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">r'\tabc\n\'123'</span></span><br><span class="line">str2=<span class="string">'\tabc\n\'123'</span></span><br><span class="line">print(str2)</span><br><span class="line"></span><br><span class="line"><span class="string">'123</span></span><br><span class="line"><span class="string">\tabc\n\'123</span></span><br></pre></td></tr></table></figure>
+<p>####4字符的编码：<br>计算不能直接存储字符（符号），只能存储数字，为了能够存储字符。<br>把每一个字符关联了一个固定的数字(这个固定的数字就是数字的编码)<br>“a”—-存编码值97<br>字符和数字一一对应的关系的表：ASCII码表，Unicode编码表（python）<br> Unicode编码表是ASCII码表扩展。<br>（1）ASCII码表–在计算中采用一个字节保存一个字符，字符包含了所有的字母，数字和美国常用的符号（128个字符）。<br>数字48开始到57，0–9  大写字母的编码值小于小写的， 大写—65到90，小写-97–122,范围0-127<br>（2）Unicode编码表—万国码<br>Unicode编码表：包含了世界上所有的国家所有的语言对应的符号。总共有65356个符号。<br>中文的编码的范围，4e00 –9fa5<br>编码字符：\u4位16进制的数<br>####chr(编码值)—-获取编码值对应的字符。<br>####ord(字符)—获取指定字符对应的编码值,返回的是十进制的。<br>#####：字符串在比较大小的时候比较的是编码值得大小，第一个大了那就是这个大不会再比较后面的。<br>#####注意：在python 中不同的进制之间也是可以比较大小的。</p>
+<p>#二。字符串的操作。<br>####1.获取元素。<br>（1）获取单个元素<br>切片，遍历，字符串[下标]<br>一个空格是一个字符，按tab键是四个字符。<br>转义字符，\t对应一个字符<br>(2)切片：字符串[开始下标：结束下标：步长]<br>（3）直接遍历，通过下标遍历<br>（4）简洁的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str=<span class="string">"hello ,python"</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str:</span><br><span class="line">    print(<span class="string">"i"</span>,i)</span><br></pre></td></tr></table></figure>
+<p>####for index,item in enumerate(str):#这个方法可以获得元素和下标。<br>####print(index,item)<br>（5）相关的操作：<br>1运算符：<br>加法—把两个字符串合并在一起产生一个新的字符串。原字符串不变，因为字符串不可变。<br>乘法—重复出现N次<br>比较大小：字符串1，字符串2<br>print(“abcdf”&gt;”bc”)<br>####字符串比较大小比较的是字符串的编码值的大小。<br>print(“Z”&gt;”a”)<br>应用：<br>判断字母是否是小写字母：<br>“a”&lt;=chr&lt;=”z”<br>判断字符是否是大写字母：<br>“A”&lt;=chr&lt;=”Z”<br>判断是否是字母：<br>“A”&lt;=char&lt;”Z” or “a”&lt;=chr()&lt;=”z”<br>判断字符是否是数字：”0”&lt;=chr&lt;=”9”</p>
+<p>练习，输入一个字符串，判断这个字符串是否是中文的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> str3=input(<span class="string">"请输入字符串:"</span>)</span><br><span class="line"> <span class="keyword">for</span> i <span class="keyword">in</span> str3:</span><br><span class="line">     <span class="keyword">if</span> <span class="number">0x4e00</span>&lt;= ord(i) &lt;= <span class="number">0x9fa5</span>:</span><br><span class="line">             print(i)</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">         print(<span class="string">"输入错误"</span>)</span><br><span class="line"></span><br><span class="line"> a=hex(<span class="number">32</span>)</span><br><span class="line"> b=oct(<span class="number">16</span>)</span><br><span class="line"> print(hex(<span class="number">32</span>)&gt;oct(<span class="number">16</span>))</span><br><span class="line">str3 = input(<span class="string">"请输入字符串:"</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> str3:</span><br><span class="line">    <span class="keyword">if</span> chr(<span class="number">0x4e00</span>)&lt;= i &lt;= chr(<span class="number">0x9fa5</span>):</span><br><span class="line">            print(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"输入错误"</span>)</span><br><span class="line"></span><br><span class="line">value = input(<span class="string">"请输入："</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="string">"\u4e00 "</span> &lt;= i &lt;= <span class="string">"9fa5"</span> :</span><br><span class="line">        print(<span class="string">"不是中文"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"中文"</span>)</span><br></pre></td></tr></table></figure>
+<p>(6)in not in 操作：<br>字符串1  in 字符串2 —判断字符串2中是否包含字符串1<br>str2 = “abc123”<br>str4 = “abc”<br>print(str4 in str2),结果是True,<br>(7)相关的函数：len,str,sorted,reversed.<br>len(字符串)—-判断字符串的长度，转义字符的长度是1.空格的长度要注意。<br>print(“”)—这个长度是0，print(“ “)—这个是1<br>b.str(数据)—所有的数据都能转字符串。直接将原数据的打印值加引号。<br>c.sorted(字符串)—-产生一个新的列表。按字符编码值排序的。(小–到)<br>srt=”123adfsdfaSDFASDFASD”<br>print(sorted(str))<br>#三.格式化字符串<br>字符–长度为1的字符串<br>格式字符串：<br>1.格式占位符：<br> a.语法:包含格式占位符的字符串 %（值1，值2，）<br>b.说明：<br>格式占位符：%s(字符串),%d(数字整型),%f(小数)<br>格式占位符使用的时候需根据类型来对应使用。<br>其实所有的数据都可以用%s来占位。<br> %-Nd–整数—可以来约束数字最后的长度，如果不够后面补空格。+,-数字N，，+在前面补空格，—后面补空格。<br>% .Nf—–N是约束小数点后的位数。<br>%f——这个一般不用，默认是保留六位小数。<br>本身是多少位就是多少，就用%s<br>%–固定写法 （）–固定写法，如果值是一个直接省略。  值–除了任何有结果的表达式，值得个数和类型和前面的占位符的个数以及类型保持一致。<br>%c—-字符占位。可以把字符转为相应的数字<br>name = “xiaoma”<br>age = 18<br>money=234.5686868<br>print(“我叫%s,我%6d岁，我有%.3f” % (name, age,money))<br>print(“我叫%s,我%6d岁，我有%s” % (name, age,money))<br> .format<br>####用法一：”…{  }”.format(放进去)–几个大括号就放几个值。<br>print(“我叫{},今年{}岁”.format(“马羽”,”18”))</p>
+<p>####用法二：{N} 从0开始依次增加，分别表示format中第0值第一个值，，，，<br>print(“我是{0},今年{1}岁，我是{2}人”).format(“马羽”,”18”,”湖南”)<br>####用法三：[key]<br>“{key1},{key2}”.format(key1=值1，key2=值2)<br>print(“我是{name},年纪{age}”.format(name=”mau”,age=18))<br>####用法四:用列表的占位符赋值：<br>list=[10,20,34,56]<br>print(“{0[0]},{0[1]},{0[2]}”.format(list))<br>#####用法五：<br>student={“name”:”小明”,”age”:20}<br>print(“{name}今年{age}岁”.format(<strong>student))#</strong>解包<br>####其他的写法：<br>print(“圆周率:{:.2f}”.format(3.1415926))<br>print(“整数：{:0&gt;4d}。”.format(25))#大于前面加，下雨后面加  4个0<br>print(“整数：{:+&gt;4d}。”.format(25))#大于前面加，下雨后面加  4个0<br>print(“{:2%}”.format(0.255))<br>#四.字符串的相关的方法</p>
+<h4 id="1字符串-capitalize-–将字符串的首字母变成大写的字母。"><a href="#1字符串-capitalize-–将字符串的首字母变成大写的字母。" class="headerlink" title="1字符串.capitalize()–将字符串的首字母变成大写的字母。"></a>1字符串.capitalize()–将字符串的首字母变成大写的字母。</h4><p>大写字母和小写字母的差值是32<br>char=”a”<br>print(chr(ord(char)-32))</p>
+<h4 id="2-字符串-center-宽度，填充字符-—原字符串在中间"><a href="#2-字符串-center-宽度，填充字符-—原字符串在中间" class="headerlink" title="2 字符串.center(宽度，填充字符)—原字符串在中间"></a>2 字符串.center(宽度，填充字符)—原字符串在中间</h4><p> 字符串.ljust(宽度，填充字符)—原字符串在左边<br>字符串.rjust(宽度，填充字符)—原字符串在右边<br>字符串.zfill(宽度，填充字符)—用0 填充<br>str2=”abc”<br>print(str2.center(7,”+”))<br>print(str2.ljust(7,”+”))<br>print(str2.rjust(7,”+”))<br>print(str2.zfill(7))</p>
+<p>####3字符串1.count(字符串2)—统计字符串1中字符串2出现的次数。<br>str1=”what are you doing”<br>print(str1.count(“a”))</p>
+<h4 id="4字符串1-count-字符串2，开始下标，结束下标-–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。"><a href="#4字符串1-count-字符串2，开始下标，结束下标-–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。" class="headerlink" title="4字符串1.count(字符串2，开始下标，结束下标)–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。"></a>4字符串1.count(字符串2，开始下标，结束下标)–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。</h4><p>str1=”what are you doing”<br>print(str1.count(“a”,0,3))<br>str3=”abc”<br>str5=”hao are you”#判断str3是否是str5的结尾<br>print(str5[-len(str3):]==str3)</p>
+<h4 id="5字符串1-index-查找的字符2-，不存在会报错。"><a href="#5字符串1-index-查找的字符2-，不存在会报错。" class="headerlink" title="5字符串1.index(查找的字符2)，不存在会报错。"></a>5字符串1.index(查找的字符2)，不存在会报错。</h4><h4 id="6字符串-find-需要查找的字符-，不存在是-1"><a href="#6字符串-find-需要查找的字符-，不存在是-1" class="headerlink" title="6字符串.find(需要查找的字符)，不存在是-1"></a>6字符串.find(需要查找的字符)，不存在是-1</h4><h4 id="7字符串1-find-字符串2-–获取字符串2第一次在1出现的位置"><a href="#7字符串1-find-字符串2-–获取字符串2第一次在1出现的位置" class="headerlink" title="7字符串1.find(字符串2)–获取字符串2第一次在1出现的位置"></a>7字符串1.find(字符串2)–获取字符串2第一次在1出现的位置</h4><h4 id="8-字符串-join-序列-–将序列中的用字符串连在一起，序列中的元素必须是字符串。"><a href="#8-字符串-join-序列-–将序列中的用字符串连在一起，序列中的元素必须是字符串。" class="headerlink" title="8 字符串.join(序列)–将序列中的用字符串连在一起，序列中的元素必须是字符串。"></a>8 字符串.join(序列)–将序列中的用字符串连在一起，序列中的元素必须是字符串。</h4><p>字典使用这个方法拼接的是键。<br>print(“+++++”.join(“abc”))#—前面决定用什么连接<br>print(“+++++”.join([“abc””cds”]))#—前面决定用什么连接<br>####9.  字符串.maketrans(),字符串.translate()—字符串替换， 字符串1.replace(字符串2，字符串3)–将字符串1中所有的字符串2都替换成3<br>str1=”what are you doing”<br>str0=str1.replace(“you”,”me”)<br>print(str0)<br>字符串1.translate(替换的映射表)<br>字符串2.maketrans(字符串3)–创建字符串2和字符串3对应的映射表<br>table=str.maketrans(“a”,”的”)#将字符串str1中的所有的a 替换成 的<br>new=str1.translate(table)<br>print(new)</p>
+<h4 id="10切割字符串"><a href="#10切割字符串" class="headerlink" title="10切割字符串"></a>10切割字符串</h4><p>“””<br>字符串.split(字符串2)–将字符串1中的所有的字符串2作为切割点切成多份<br>“””<br>qie=str1.split(“a”)#–切割点不存在了<br>print(qie)<br>方法：<br>####数字：str.isdigit(  ) 判断是否是数字<br>####字母：str.isalpha(  ) 判断是否是字母<br>####数字字母的组合：str.isalnum(  ) 判断是否数字和字母的组合</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>2m雨天
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://mayu123mayu.github.io/2020/01/05/07%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%96%B9%E6%B3%95/" title="07字符串格式及其方法">http://mayu123mayu.github.io/2020/01/05/07字符串格式及其方法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+	<div>
+ 	 
+   	 <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------<i class="fa fa-paw"></i>小马哥 2m雨天感谢您的阅读-------------</div>
+    
+<div>
+
+ 	 
+	</div>
+
+
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/01/05/06%E5%AD%97%E5%85%B8%EF%BC%8C%E9%9B%86%E5%90%88%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="prev" title="06字典，集合相关的知识点">
+      <i class="fa fa-chevron-left"></i> 06字典，集合相关的知识点
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/01/05/08%E5%87%BD%E6%95%B0%E5%9F%BA%E7%A1%80%E5%92%8C%E5%AE%9E%E5%8F%82%E5%BD%A2%E5%8F%82/" rel="next" title="08函数基础和实参形参">
+      08函数基础和实参形参 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1字符串-capitalize-–将字符串的首字母变成大写的字母。"><span class="nav-number">1.</span> <span class="nav-text">1字符串.capitalize()–将字符串的首字母变成大写的字母。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-字符串-center-宽度，填充字符-—原字符串在中间"><span class="nav-number">2.</span> <span class="nav-text">2 字符串.center(宽度，填充字符)—原字符串在中间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4字符串1-count-字符串2，开始下标，结束下标-–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。"><span class="nav-number">3.</span> <span class="nav-text">4字符串1.count(字符串2，开始下标，结束下标)–在字符串1中统计字符串2从开始到结束出现的次数结尾取不到。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5字符串1-index-查找的字符2-，不存在会报错。"><span class="nav-number">4.</span> <span class="nav-text">5字符串1.index(查找的字符2)，不存在会报错。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6字符串-find-需要查找的字符-，不存在是-1"><span class="nav-number">5.</span> <span class="nav-text">6字符串.find(需要查找的字符)，不存在是-1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7字符串1-find-字符串2-–获取字符串2第一次在1出现的位置"><span class="nav-number">6.</span> <span class="nav-text">7字符串1.find(字符串2)–获取字符串2第一次在1出现的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-字符串-join-序列-–将序列中的用字符串连在一起，序列中的元素必须是字符串。"><span class="nav-number">7.</span> <span class="nav-text">8 字符串.join(序列)–将序列中的用字符串连在一起，序列中的元素必须是字符串。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10切割字符串"><span class="nav-number">8.</span> <span class="nav-text">10切割字符串</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="2m雨天"
+      src="/images/kebi.jpg">
+  <p class="site-author-name" itemprop="name">2m雨天</p>
+  <div class="site-description" itemprop="description">菜鸟的编程自学之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+  <div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32703006&auto=1&height=66"></iframe>
+  
+  </div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">2m雨天</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">178k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:42</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="255,0,0" opacity='0.4' zIndex="-2" count="300" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+  <script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

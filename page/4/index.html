@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://mayu123mayu.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":20,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="菜鸟的编程自学之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小马哥">
+<meta property="og:url" content="http://mayu123mayu.github.io/page/4/index.html">
+<meta property="og:site_name" content="小马哥">
+<meta property="og:description" content="菜鸟的编程自学之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="2m雨天">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mayu123mayu.github.io/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>小马哥</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+<link rel="alternate" href="/atom.xml" title="小马哥" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    
+    
+<a href="https://your-url" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小马哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">因为到过地狱才知道天堂的美好</p>
+
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home  //"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-users"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive //归档"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/69-JS-%E4%B8%AD-Vue%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/69-JS-%E4%B8%AD-Vue%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">69-JS-中-Vue基本使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.什么是vue—用js封装的框架，让数据的渲染更加简单。<br>2.通过提供一个vue对象和网页内容进行关联，修改vue中的对象就能对直接修改网页中的内容。<br>在工程使用需要先导入的vue.js文件   也可以导入网络的。<br>3.Vue对象是什么<br>a.  new vue({<br>    el属性：  —-字符串—-选择器（一般id选择器），将当前创建的对象和html中的标签进行关联。<br>    data属性:—{}，对象，对象的属性和对应的值是程序员是自己确定的，没有要求。通过对象的属性提供数据。值必须提供数据。<br>    methods:—-{},对象， 对象的属性名随便命名，属性值必须是函数。通过对象属性提供方法，<br>    computed  –对象， 对象的属性名随便命名，属性值必须是函数。通过对象属性提供方法，  这个需要返回值，而用这个也是为了用他的返回值。</p>
+<p>})</p>
+<p>4.Vue指令<br>（1.）标签内容：—<br>（2.）标签属性: —-v-bind:标签属性=”data属性名”<br>（3.）if语句 ：—–v-if=”data属性名” （如果data属性名对应的值是true标签就显示，否则就应藏。）<br>（4.）循环结构：v-for=”变量 in 类型是数组的vue属性”<br>（4.）双向绑定：–v-model=”vue属性名（一般在表单标签中有效）”</p>
+<pre><code>&lt;!--
+    1.什么Vue  -  用js封装的框架,主要让数据渲染更加简单
+    Vue主要是通过一个Vue对象和网页内容进行关联，关联后修改Vue对象就可以直接修改网页内容
+    在工程要用Vue，需要先导入vue.js文件
+
+    2.Vue对象  - js
+    el属性  -   字符串，传选择器(一般写id选择器), 将当前创建的Vue对象和html中的标签进行关联
+    data属性  -  对象, 对象的属性和对应的值程序员自己确定，没有要求; 通过对象的属性提供数据
+    methods属性 -  对象, 对象的属性名随便命名，属性值必须函数; 通过对象属性提供方法
+    computed属性 -  对象,对象的属性名随便命名, 属性值必须函数, 函数的返回值就是使用属性的值
+
+    3.Vue指令  - html
+    1)标签内容  -  {{Vue属性名}}
+    2)标签属性  -  v-bind:标签属性 = &apos;Vue属性名&apos;
+    3)if语句    -  v-if=&apos;Vue属性名&apos; (如果Vue属性值是true对应的标签就显示，否则就隐藏)
+    4)循环结构  -  v-for = &apos;变量 in 类型是数组的Vue属性&apos;
+    5)双向绑定  -  v-model=&apos;Vue属性名&apos; (一般在表单标签中有效)
+--&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;
+        &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;    
+
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;!-----------1.绑定标签内容--------------&gt;
+        &lt;p id=&quot;app1&quot;&gt;{{pContent}}&lt;/p&gt;
+
+        &lt;div id=&quot;app2&quot;&gt;
+            &lt;p&gt;哈哈哈:{{pc}}=====&lt;/p&gt;
+            &lt;font&gt;{{fontc}}&lt;/font&gt;
+            &lt;a href=&quot;&quot;&gt;{{ac}}&lt;/a&gt;
+            &lt;p&gt;{{num*10}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //创建Vue对象
+            var app1 = new Vue({
+                el:&apos;#app1&apos;,
+                data:{
+                    message: &apos;我是段落1&apos;,
+                    message1: &apos;我不是段落1&apos;,
+                    pContent: &apos;我是段落，我是段落&apos;,
+                }
+            })
+
+            var app2 = new Vue({
+                el:&apos;#app2&apos;,
+                data:{
+                    pc:&apos;我是段落2&apos;,
+                    fontc: &apos;我是font1&apos;,
+                    ac: &apos;我是超链接1&apos;,
+                    num: 100
+                }
+            })
+
+        &lt;/script&gt;
+
+        &lt;!---------------2.标签属性--------------------&gt;
+        &lt;hr /&gt;
+        &lt;div id=&quot;app3&quot;&gt;
+            &lt;img v-bind:src=&quot;imageUrl&quot; v-bind:title=&quot;imgaeTitle&quot;/&gt;
+            &lt;input v-bind:value=&quot;userName&quot; /&gt;
+            &lt;p v-bind:style=&quot;pStyle&quot;&gt;{{pc}}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var a = &apos;你好&apos;
+            var app3 = new Vue({
+                el:&apos;#app3&apos;,
+                data: {
+                    imageUrl: &apos;img/a1.jpg&apos;,
+                    imgaeTitle: &apos;图片1&apos;,
+                    userName: &apos;张三&apos;,
+                    pc: a,
+                    pStyle: &apos;color:red;&apos;
+                }
+            })
+
+            app3.imageUrl = &apos;img/anchor.png&apos;
+
+        &lt;/script&gt;
+
+        &lt;!----------------3.if语句--------------------&gt;
+        &lt;hr /&gt;
+        &lt;div id=&quot;app4&quot;&gt;
+            &lt;p v-if=&quot;age&gt;=18&quot;&gt;网吧: 请进&lt;/p&gt;
+            &lt;p v-if=&quot;isShow&quot;&gt;我是段落4&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+
+            var app4 = new Vue({
+                el:&apos;#app4&apos;,
+                data:{
+                    age:80,
+                    isShow: true
+                }
+            })
+        &lt;/script&gt;
+
+        &lt;!----------------4.for循环-----------------&gt;
+        &lt;hr /&gt;
+        &lt;div id=&quot;app5&quot;&gt;
+            &lt;p v-for=&quot;name in names&quot;&gt;{{name}}&lt;/p&gt;
+
+            &lt;div v-for=&quot;goods in goodsList&quot;&gt;
+                &lt;p class=&quot;goodsname&quot;&gt;{{goods.name}}&lt;/p&gt;
+                &lt;p class=&quot;goodsprice&quot;&gt;￥{{goods.price}}.00&lt;/p&gt;
+                &lt;hr /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var app5 = new Vue({
+                el: &apos;#app5&apos;,
+                data:{
+                    names: [&apos;香水有毒&apos;, &apos;冲动的惩罚&apos;, &apos;2002年的第一场雪&apos;, &apos;那一夜&apos;, &apos;情人&apos;],
+                    goodsList: [
+                        {name:&apos;辣条&apos;, price:1},
+                        {name:&apos;泡面&apos;, price:3.5},
+                        {name:&apos;二锅头&apos;, price:8},
+                        {name:&apos;火腿肠&apos;, price:2}
+                    ]
+                }
+            })
+        &lt;/script&gt;
+
+        &lt;!----------------5.双向绑定----------------&gt;
+        &lt;hr /&gt;
+        &lt;div id=&quot;app6&quot;&gt;
+            &lt;p&gt;{{userName}}&lt;/p&gt;
+            &lt;input v-model=&quot;userName&quot; /&gt;
+
+            &lt;select v-model=&quot;city&quot;&gt;
+                &lt;option value=&quot;重庆&quot;&gt;重庆&lt;/option&gt;
+                &lt;option value=&quot;成都&quot;&gt;成都&lt;/option&gt;
+                &lt;option value=&quot;北京&quot;&gt;北京&lt;/option&gt;
+            &lt;/select&gt;
+
+            &lt;p&gt;{{city}}&lt;/p&gt;
+
+        &lt;/div&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            var app6 = new Vue({
+                el: &apos;#app6&apos;,
+                data:{
+                    userName: &apos;张三&apos;,
+                    city: &apos;重庆&apos;
+                }
+            })
+        &lt;/script&gt;
+
+
+    &lt;/body&gt;
+&lt;/html&gt;
+
+
+
+
+</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/68-JS-%E4%B8%AD-jQuery-%E5%8A%A8%E6%80%81%E5%88%A0%E9%99%A4%E7%9A%84%E7%BB%83%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/68-JS-%E4%B8%AD-jQuery-%E5%8A%A8%E6%80%81%E5%88%A0%E9%99%A4%E7%9A%84%E7%BB%83%E4%B9%A0/" class="post-title-link" itemprop="url">68-JS-中-jQuery-动态删除的练习</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/tools.js&quot;&gt;&lt;/script&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+            #box1{
+                margin-left: 50px;
+                margin-top: 20px;
+            }
+            #box1&gt;div{
+                width: 250px;
+                height: 50px;
+                background-color: #5F9EA0;
+                color: white;
+                font-size: 20px;
+                margin-bottom: 3px;
+
+                line-height: 50px;
+                text-align: center;
+
+                position: relative;
+            }
+            .del{
+                position: absolute;
+                right: 10px;
+
+                cursor: pointer;
+            }
+
+            #box2{
+                margin-left: 50px;
+                margin-top: 20px;
+            }
+
+            #box2&gt;input{
+                width: 250px;
+                height: 30px;
+                text-align: center;
+                font-size: 20px;
+
+                border: 0;
+                outline: 0;
+                border-bottom: 1px solid lightgray;
+            }
+            #box2&gt;button{
+                width: 70px;
+                height: 30px;
+                font-size: 16px;
+                color: white;
+                background-color: orangered;
+                border: 0;
+                outline: 0;
+            }
+
+
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;box1&quot;&gt;
+            &lt;div id=&quot;&quot;&gt;
+                &lt;font&gt;苹果&lt;/font&gt;
+                &lt;font class=&quot;del&quot;&gt;×&lt;/font&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;&quot;&gt;
+                &lt;font&gt;香蕉&lt;/font&gt;
+                &lt;font class=&quot;del&quot;&gt;×&lt;/font&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;&quot;&gt;
+                &lt;font&gt;草莓&lt;/font&gt;
+                &lt;font class=&quot;del&quot;&gt;×&lt;/font&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;&quot;&gt;
+                &lt;font&gt;火龙果&lt;/font&gt;
+                &lt;font class=&quot;del&quot;&gt;×&lt;/font&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div id=&quot;box2&quot;&gt;
+            &lt;input type=&quot;&quot; name=&quot;&quot; id=&quot;&quot; value=&quot;&quot; /&gt;
+            &lt;button&gt;确定&lt;/button&gt;
+        &lt;/div&gt;
+
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //1.确定按钮点击事件
+            $(&apos;#box2&gt;button&apos;).on(&apos;click&apos;, function(){
+                //1)获取水果名
+                var furitName = $(&apos;#box2&gt;input&apos;).val()
+                if(furitName.length == 0){
+                    furitName = prompt(&apos;请输入水果名:&apos;)
+                    if(furitName == null){
+                        return
+                    }
+                }
+                //2)显示水果
+                $(&apos;#box1&apos;).prepend($(&apos;&lt;div style=&quot;background-color: &apos;+randowColor(0.5)+&apos;;&quot;&gt;&lt;font&gt;&apos;+furitName+&apos;&lt;/font&gt;&lt;font class=&quot;del&quot;&gt;×&lt;/font&gt;&lt;/div&gt;&apos;))
+
+                //3)清空输入框
+                $(&apos;#box2&gt;input&apos;).val(&apos;&apos;)
+            })
+
+            //2.删除水果事件
+            $(&apos;#box1&apos;).on(&apos;click&apos;, &apos;.del&apos;, function(){
+                //js代码
+                //this.parentElement.remove()
+
+                //jQuery代码
+                $(this).parent().remove()
+            })
+
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/67-JS-%E4%B8%ADAjax%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%82/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/67-JS-%E4%B8%ADAjax%E7%9A%84%E4%BD%BF%E7%94%A8%E3%80%82/" class="post-title-link" itemprop="url">67-JS-中Ajax的使用。</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.什么是Ajax  asyn  javascript  xml(异步js)<br>Ajax–是jQuery封装的专门用来做网络http请求的相关方法。和python request的功能是一样的，<br>2.jQuery 中封装的先导入jQuery、<br>3.如何使用：$.ajax({<br>    url:数据接口地址，<br>    type:请求方式(get/post)<br>    data:请求数据(客服端传递给服务器的数据，值是对象,请求的时候需要参数就传参。)<br>    success:请求成功的回调函数（函数）。<br>    error:请求失败的回调函数。</p>
+<p>})</p>
+<pre><code>&lt;!--
+    1.什么是Ajax  - asyn javascript xml(异步js)
+    Ajax是由jQuery封装的专门用来做http请求的相关方法。和python中第三方库requests的功能一样
+
+--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;div id=&quot;box&quot;&gt;
+
+        &lt;/div&gt;
+
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //1.ajax
+            /*
+             $.ajax({
+                 url:数据接口地址,
+                 type:请求方式(get/post),
+                 data:请求数据/参数(客户端传递给服务器的数据, 值是对象),
+                 success:请求成功的回调函数(函数),
+                 error:请求失败的回调函数
+             })
+             */
+            $.ajax({
+                type:&quot;get&quot;,
+                url:&quot;http://rap2api.taobao.org/app/mock/233723/shopping&quot;,
+                data:{username:&apos;小明&apos;, password:&apos;123456&apos;},
+                success:function(result){
+                    console.log(&apos;请求成功！&apos;)
+                    console.log(result)
+                    for(var goods of result.data){
+                        var name = goods.name
+                        $(&apos;#box&apos;).append($(&apos;&lt;p&gt;&apos;+name+&apos;&lt;/p&gt;&apos;))
+                        $(&apos;#box&apos;).append($(&apos;&lt;img src=&quot;&apos;+goods.goods_image+&apos;&quot; /&gt;&apos;))
+
+                    }
+                },
+                error: function(){
+                    console.log(&apos;请求失败&apos;)
+                }
+            });
+
+            $.get(&quot;http://rap2api.taobao.org/app/mock/233723/shopping&quot;, {username:&apos;小明&apos;, password:&apos;123456&apos;}, function(result){
+
+                console.log(&apos;=====:&apos;, result)
+            })
+
+
+
+        &lt;/script&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/66-JS-%E4%B8%ADjQury%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/66-JS-%E4%B8%ADjQury%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A/" class="post-title-link" itemprop="url">66-JS-中jQury事件绑定</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.节点对象.on(事件名，事件驱动程序)<br>直接给指定标签绑定事件<br>(a). 事件取掉on<br>(b).this是事件源，是这个事件源对应的js对象。改变内容其他的都是用js的方法。<br>(c).想要当做jQ来用，先转成jQery.<br>2.父节点对象.on(事件名，选择器,事件驱动程序)<br>(a).拿到父节点对象，再在里面选中选择器的那个标签，再给他绑定事件。<br>(b).就是拿到节点对象里的子标签给绑定事件。<br>3.两种的区别：<br>(a).第一种绑定方式，如果在后面添加了就绑定不了不能执行。<br>(b).而父标签给子标签绑定事件的时候，是可以在后面添加是可以执行的。<br>(c).任何绑定方式中this都是事件源。<br>4.事件捕获：和js一样。<br>evt.stopPropagation()</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.min.js&quot;&gt;
+
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id=&quot;div1&quot;&gt;
+            &lt;button&gt;按钮1&lt;/button&gt;
+            &lt;button&gt;按钮2&lt;/button&gt;
+            &lt;button&gt;按钮3&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;button id=&quot;addBtn&quot;&gt;添加&lt;/button&gt;
+
+        &lt;hr /&gt;
+        &lt;div id=&quot;div2&quot; style=&quot;background-color: yellow;&quot;&gt;
+            &lt;!--&lt;p&gt;我是段落1&lt;/p&gt;--&gt;
+            &lt;button&gt;按钮4&lt;/button&gt;
+            &lt;button&gt;按钮5&lt;/button&gt;
+            &lt;!--&lt;p&gt;我是段落2&lt;/p&gt;--&gt;
+            &lt;button&gt;按钮6&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;button id=&quot;addBtn2&quot;&gt;添加&lt;/button&gt;
+        &lt;!---------1.事件绑定--------------&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+            //1)节点对象.on(事件名,事件驱动程序)  -  直接给指定的节点绑定事件
+            //注意: 事件名要去掉on
+            $(&apos;#div1&gt;button&apos;).on(&apos;click&apos;, function(evt){
+                //注意: 这儿的this是事件源，但是是js的对象
+                console.log(this)
+
+                $(this).css(&apos;color&apos;, &apos;red&apos;)
+
+                //事件捕获：和js一样
+                evt.stopPropagation()
+            })
+
+            console.log($(&apos;button&apos;).text())    // 按钮1按钮2按钮3
+
+
+            $(&apos;#addBtn&apos;).on(&apos;click&apos;, function(){
+                $(&apos;#div1&apos;).append($(&apos;&lt;button&gt;新按钮&lt;/button&gt;&apos;))
+            })
+
+
+            //2)节点对象.on(事件名,选择器,事件驱动程序)  -   通过父标签给选择器选中的子标签绑定事件
+            $(&apos;#div2&apos;).on(&apos;click&apos;, &apos;button&apos;,function(){
+                alert(&apos;按钮点击&apos;)
+                console.log(this)
+
+            })
+
+            $(&apos;#addBtn2&apos;).on(&apos;click&apos;, function(){
+                $(&apos;#div2&apos;).append($(&apos;&lt;button&gt;新按钮&lt;/button&gt;&apos;))
+            })
+
+
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/65-JS-%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/65-JS-%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">65-JS-中jQuery节点属性操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.特殊属性<br>(1)标签内容：text(),html()<br>    (a)获取标签内容—节点对象.text(),html()<br>        text()一个是纯文本，html()一个是内容。<br>    (b)修改标签内容—节点对象.text(“修改文本内容”),html(修改文本或其他)<br>        文本修改就用text(),插入其他的标签或其他的用html(修改的内容)<br>(2)value属性：<br>    val()  比如input标签中的value值，直接拿到input标签的对象再  节点对象.val()–括号中没有值就是拿到，有就是修改。<br>(3)class属性：<br>    (a) 节点对象.addClass(class值)–添加class<br>    (b) 节点对象.removeClass(class值)–移除指定的class</p>
+<p>2.样式属性<br>(1)节点对象.css(样式属性名)—获取样式指定属性的值<br>(2)节点对象.css(样式属性名,样式属性值)—设置样式指定属性的值<br>注意：这儿的属性名和css属性名一致。<br>(3)节点对象.css(对象)–同时设置多个属性值。<br>    css({<br>        属性名1：值1<br>        属性名2：值2<br>        属性名3：值3<br>    注意：属性名不加引号采用驼峰式命名，加引号还是可以用css命名。<br>    })<br>3.普通属性<br>(1)节点对象.attr(属性名)—获取指定属性的值<br>(2)节点对象.attr(属性名,值)—修改指定属性的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;jquery.min.js&quot;&gt;</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;p id&#x3D;&quot;p1&quot;&gt;我是段落1&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;input type&#x3D;&quot;&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; value&#x3D;&quot;张三&quot; &#x2F;&gt;</span><br><span class="line">		&lt;p id&#x3D;&quot;p2&quot;&gt;我是段落2&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;p id&#x3D;&quot;p3&quot;&gt;我是段落3&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;!------------1.特殊属性--------------&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;1)标签内容: text(), html()</span><br><span class="line">			&#x2F;&#x2F;获取标签内容</span><br><span class="line">			console.log($(&#39;#p1&#39;).text(), $(&#39;#p1&#39;).html())</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;修改标签内容</span><br><span class="line">			$(&#39;#p1&#39;).text(&#39;我是jQuery&#39;)</span><br><span class="line">			$(&#39;#p1&#39;).html(&#39;1.&lt;a href&#x3D;&quot;&quot;&gt;我是jQuery&lt;&#x2F;a&gt;&#39;)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;2)value属性: val()</span><br><span class="line">			console.log($(&#39;input&#39;).val())</span><br><span class="line">			$(&#39;input&#39;).val(&#39;李四&#39;)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;3)class属性</span><br><span class="line">			&#x2F;&#x2F;addClass(class值)  -  添加class</span><br><span class="line">			$(&#39;input&#39;).addClass(&#39;c1&#39;)</span><br><span class="line">			$(&#39;input&#39;).addClass(&#39;c2&#39;)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;removeClass(class值)  - 移除指定class</span><br><span class="line">			$(&#39;input&#39;).removeClass(&#39;c1&#39;)</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!------------2.样式属性--------------&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;1)css(样式属性名)   -   获取样式指定属性的值</span><br><span class="line">			&#x2F;&#x2F;  css(样式属性名,样式属性值)  -  设置指定样式属性的值</span><br><span class="line">			&#x2F;&#x2F;注意: 这儿的属性名和css属性名一致</span><br><span class="line">			$(&#39;#p2&#39;).css(&#39;color&#39;, &#39;red&#39;)</span><br><span class="line">			$(&#39;#p2&#39;).css(&#39;font-size&#39;, &#39;30px&#39;)</span><br><span class="line">			console.log($(&#39;#p2&#39;).css(&#39;color&#39;))</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;2)css(对象)   -  同时设置多个属性</span><br><span class="line">			&#x2F;*</span><br><span class="line">			 css(&#123;</span><br><span class="line">			 	属性名1: 值1,</span><br><span class="line">			 	属性名2: 值2,</span><br><span class="line">			 	属性名3: 值3,</span><br><span class="line">			 	....</span><br><span class="line">			 &#125;)</span><br><span class="line">			 </span><br><span class="line">			 </span><br><span class="line">			 注意: 属性名不加引号是css属性名采用驼峰式命名； 加引号还是可以用css属性名</span><br><span class="line">			 *&#x2F;</span><br><span class="line">			$(&#39;#p3&#39;).css(&#123;</span><br><span class="line">				&#39;color&#39;:&#39;red&#39;,</span><br><span class="line">				&#39;font-size&#39;: &#39;30px&#39;,</span><br><span class="line">				&#39;backgroundColor&#39;: &#39;yellow&#39;</span><br><span class="line">			&#125;)</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;img src&#x3D;&quot;img&#x2F;anchor.png&quot;&#x2F;&gt;</span><br><span class="line">		&lt;!------------3.普通属性--------------&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;1)attr(属性名)  -  获取指定属性值</span><br><span class="line">			&#x2F;&#x2F;  attr(属性名, 值)   -  修改指定属性的值</span><br><span class="line">			console.log($(&#39;img&#39;).attr(&#39;src&#39;))</span><br><span class="line">			$(&#39;img&#39;).attr(&#39;src&#39;, &#39;img&#x2F;bear.png&#39;)</span><br><span class="line">			$(&#39;img&#39;).attr(&#39;title&#39;, &#39;熊&#39;)</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/64-JS-%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/64-JS-%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C2/" class="post-title-link" itemprop="url">64-JS-中jQuery节点操作2</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.创建节点:$(“HTML中创建标签的语法”)<br>2.添加节点。<br>(a).节点对象1.append(节点对象2) —在节点对象1的后面添加节点对象2.（最前面）<br>(b).节点对象1.prepend(节点对象2)—在节点对象1的最前面添加节点对象2.（最后面）<br>(c).节点对象1.before(节点对象2)—-在节点对象1的前面插入节点2.（插入）<br>(d).节点对象1.after(节点对象2)—–在节点对象1的后面插入节点对象2.（插入）</p>
+<p>3.删除节点:<br>(a.)节点对象.remove()—删除指定节点对象。jquery中删除是看容器中数据的多少就删除多少，取决于容器数据的多少。<br>(b.)节点对象.empty()–删除节点对象中所有的子节点。<br>4.拷贝节点<br>节点对象.clone()/false –标签是深拷贝，jquery绑定的事件是不会拷贝的。<br>节点对象.clone(true)/—-标签是深拷贝，jquery绑定的事件是会拷贝的。<br>补充js对象和jquery对象的相互转换：<br>(a) jquery–js —取出jquery中的对象<br>(b) js–jquery–直接$(js对象)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;jquery.min.js&quot;&gt;</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;div1&quot;&gt;</span><br><span class="line">			&lt;h1&gt;我是标题1&lt;&#x2F;h1&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;h1&gt;我是标题2&lt;&#x2F;h1&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;!----------1.创建节点: $(&#39;HTML创建标签的语法&#39;)------------&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;创建p标签</span><br><span class="line">			var pNodes &#x3D; $(&#39;&lt;p&gt;我是段落1&lt;&#x2F;p&gt;&#39;)</span><br><span class="line">			console.log(pNodes)</span><br><span class="line">			</span><br><span class="line">			var divNodes &#x3D; $(&#39;&lt;div&gt;&lt;a&gt;我是超链接1&lt;&#x2F;a&gt;&lt;img title&#x3D;&quot;熊&quot; src&#x3D;&quot;img&#x2F;bear.png&quot;&gt;&lt;&#x2F;div&gt;&#39;)</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!---------------2.添加节点--------------------&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;1)节点对象1.append(节点对象2)   -   在节点对象1的最后添加节点对象2（对象都是jQuery对象）</span><br><span class="line">			$(&#39;#div1&#39;).append(pNodes)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;2)节点对象1.prepend(节点对象2)  -   在节点对象1的最前面添加节点对象2</span><br><span class="line">			$(&#39;#div1&#39;).prepend(divNodes)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;3)节点对象1.before(节点对象2)    -   在节点对象1的前面插入节点对象2</span><br><span class="line">			$(&#39;#div1 h1:last&#39;).before($(&#39;&lt;input placeholder&#x3D;&quot;请输入账号&quot;&#x2F;&gt;&#39;))</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;4)节点对象1.after(节点对象2)     -   在节点对象1的后面插入节点对象2</span><br><span class="line">			$(&#39;#div1 h1:first&#39;).after($(&#39;&lt;input id&#x3D;&quot;in1&quot; type&#x3D;&quot;radio&quot; &#x2F;&gt;&lt;label for&#x3D;&quot;in1&quot;&gt;男&lt;&#x2F;label&gt;&#39;))</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		&lt;!----------------3.删除节点--------------------&gt;</span><br><span class="line">		&lt;hr &#x2F;&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;div2&quot;&gt;</span><br><span class="line">			&lt;p&gt;我是段落2&lt;&#x2F;p&gt;</span><br><span class="line">			&lt;a href&#x3D;&quot;&quot;&gt;我是超链接2&lt;&#x2F;a&gt;</span><br><span class="line">			&lt;img src&#x3D;&quot;img&#x2F;hat.png&quot;&#x2F;&gt;</span><br><span class="line">			&lt;p&gt;我是段落3&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			&#x2F;&#x2F;1) 节点对象.remove()   -  删除指定节点对象</span><br><span class="line">			$(&#39;#div2 a&#39;).remove()</span><br><span class="line">			</span><br><span class="line">&#x2F;&#x2F;			$(&#39;#div2 p&#39;).remove()</span><br><span class="line">&#x2F;&#x2F;			$(&#39;#div2 p&#39;).append($(&#39;&lt;input type&#x3D;&quot;color&quot;&#x2F;&gt;&#39;))</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F;2)节点对象.empty()   -  删除节点对象中所有的子节点</span><br><span class="line">			$(&#39;#div2&#39;).empty()</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-----------------4.拷贝节点------------------&gt;</span><br><span class="line">		&lt;hr &#x2F;&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;div3&quot; style&#x3D;&quot;background-color: seagreen; width: 300px; height: 200px;&quot;&gt;</span><br><span class="line">			&lt;p&gt;我是段落4&lt;&#x2F;p&gt;</span><br><span class="line">			&lt;img src&#x3D;&quot;img&#x2F;bucket.png&quot;&#x2F;&gt;</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			$(&#39;#div3&#39;).on(&#39;click&#39;, function()&#123;</span><br><span class="line">				alert(&#39;你好!&#39;)</span><br><span class="line">			&#125;)</span><br><span class="line">			&#x2F;&#x2F;1）节点对象.clone()&#x2F;节点对象.clone(false)  -  标签深拷贝，jQuery绑定的事件不拷贝</span><br><span class="line">			&#x2F;&#x2F;   节点对象.clone(true)     -    标签深拷贝，jQuery绑定的事件也拷贝</span><br><span class="line">			var newDiv3s &#x3D; $(&#39;#div3&#39;).clone()</span><br><span class="line">			$(&#39;#div3&#39;).after(newDiv3s)</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;补充: js对象和jQuery对象的相互转换</span><br><span class="line">			&#x2F;&#x2F;jQuery对象 转 js对象   -  取出jQuery对象容器中的元素</span><br><span class="line">			&#x2F;&#x2F;js对象 转 jQuery对象   -  $(js对象)</span><br><span class="line">			var div3Node &#x3D;  $(&#39;#div3&#39;)[0].cloneNode()</span><br><span class="line">			$(&#39;#div3&#39;).before($(div3Node))</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/63-JS%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E7%9A%84%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/63-JS%E4%B8%ADjQuery%E8%8A%82%E7%82%B9%E7%9A%84%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">63-JS中jQuery节点的操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>982</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.jQuery获取节点：$(个)–根据选择器选中HTML标签对应的节点，返回一jQuery对象。<br>a.说明：—选择器：css中选择器的写法。<br>b.jQuery—获取节点后可以遍历一个一个的操作（但是遍历出来就是js对象，操作就必须是用js操作），也可以一起操作这个用jQuery对象。<br>c.注意：重点！！！jQuery的本质是一个容器，容器中的对象是js节点。<br>d. 补充选择器：<br>(1)”p+a”—紧跟着p的a(标签名但必须是兄弟关系。)<br>(2)”#p1<del>*”–选中id是p1的后面所有的同级的所有的标签，</del>后面的可以换p1~a,这个就是选择它后面所有同级的a标签。<br>(3)”p:first”—选中当前页面中第一个p标签。<br>(4)”p:last”—-选中当前页面中最后一个p标签。<br>(5)”div *:first”—-拿div中第一个标签，标签类型无限制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">	&lt;&#x2F;head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!--1.简单的选择器--&gt;</span><br><span class="line">		&lt;p id&#x3D;&quot;p45&quot;&gt;哈哈哈&lt;&#x2F;p&gt;</span><br><span class="line">		&lt;div id&#x3D;&quot;div1&quot;&gt;</span><br><span class="line">			&lt;p&gt;我是实验的&lt;&#x2F;p&gt;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;div&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;js&#x2F;jquery.min.js&quot;&gt;</span><br><span class="line">			</span><br><span class="line">			plnod&#x3D;$(&quot;#px5&quot;)</span><br><span class="line">			console.log(plnod)</span><br><span class="line">			Dat&#x3D;$(&quot;#div1&gt;p&quot;)</span><br><span class="line">&#x2F;&#x2F;			Dat.css(&quot;color,red&quot;)</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">	&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/62-JS%E4%B8%ADjQuery%E8%AE%A4%E8%AF%86-html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/62-JS%E4%B8%ADjQuery%E8%AE%A4%E8%AF%86-html/" class="post-title-link" itemprop="url">62-JS中jQuery认识-html</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>680</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.什么是jQuery<br>jQuery本质是一个js封装的库，里面封装了很多的方法和对象让网页开发更简单。<br>jQuery是通过jQuery对象来提供功能的。<br>2.怎么导入jQuery库。<br>1.导入本地的对应文件<br>2.导入远程的。<br>3.怎么使用jQuery。<br>（1）$ –在jQuery中，jQuery是可以看成是jQuery类的，$()就是jQuery的对象。<br>（1）可以通过将：$（节点）—将js中的节点转换成jQuery的对象。<br>jQuery对象的本质就是一个容器型数据类型的数据，容器中的元素是节点，直接操作jQuery对象会作用于这个对象中所有的节点对应的元素。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script type=&quot;text/javascript &quot;src=&quot;js/jquery.min.js&quot;&gt;
+
+        &lt;/script&gt;
+        &lt;!--&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;&gt;&quot;&gt;--&gt;
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/61-JS-%E4%B8%AD-DOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%8D%95%E8%8E%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/61-JS-%E4%B8%AD-DOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%8D%95%E8%8E%B7/" class="post-title-link" itemprop="url">61-JS-中-DOM事件的捕获</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>275</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.事件传递: 发生在子标签上的事件会传递给父标签。<br>事件传递问题：如果父子标签都对同一个事件进行绑定，那么子标签触发事件的时候父标签也会做出反应</p>
+<p>#解决这种现象：<br>在子标签里赋值一个形参，形参会默认拿到里面的event属性然后再：<br> 形参.stopPropagation()</p>
+<p>鼠标事件对象属性：<br>client x   client y   鼠标点击点到浏览器左边和顶部的距离。<br>offset x   offset y 鼠标点击点到当前标签左边和顶部的距离。<br>给函数里面赋一个参数—拿到event事件的函数。再去  参数.client x    参数.client y</p>
+<p> 子标签形参.stopPropagation()</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/60-JS-%E4%B8%AD-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%B1%BB%E5%9E%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/60-JS-%E4%B8%AD-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%B1%BB%E5%9E%8B/" class="post-title-link" itemprop="url">60-JS-中-常见的事件的类型</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>427</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.常见的事件类型。<br>onload   -  页面加载完成</p>
+<p>onclick  -  鼠标点击(单击)标签对应的事件(一般绑定在按钮上)<br>ondblclick  -  鼠标双击事件<br>onmouseover -  鼠标进入标签事件<br>onmouseout  -  鼠标离开标签事件<br>onmousedown—鼠标按下事件<br>onmouseup—-鼠标释放事件<br>onchange   -  内容改变事件</p>
+<p>1)window.onload —页面加载完成<br>页面中的标签加载完成，才去获取页面中的内容。用于比如先写了标签的操作，但是标签在后面，就可以用这个。<br>(2)onclick —鼠标点击标签对应的事情。一般绑定在按钮上，（单击）<br>ondbclick  —–鼠标双击事件 。<br>onmouseover —–鼠标进入标签的事件<br>onmouseout ——鼠标离开标签事件<br>onchange ——内容改变事件（1.输入框输入完成可以触发onchange事件2.单选按钮和复选按钮在修改选中选项的时候，选中或则取消选中触发的都是onchange事件3.下拉菜单改变的时候）</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="2m雨天"
+      src="/images/kebi.jpg">
+  <p class="site-author-name" itemprop="name">2m雨天</p>
+  <div class="site-description" itemprop="description">菜鸟的编程自学之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+  <div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32703006&auto=1&height=66"></iframe>
+  
+  </div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">2m雨天</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">178k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:42</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="255,0,0" opacity='0.4' zIndex="-2" count="300" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+  <script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

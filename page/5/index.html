@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://mayu123mayu.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":20,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="菜鸟的编程自学之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小马哥">
+<meta property="og:url" content="http://mayu123mayu.github.io/page/5/index.html">
+<meta property="og:site_name" content="小马哥">
+<meta property="og:description" content="菜鸟的编程自学之路">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="2m雨天">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mayu123mayu.github.io/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>小马哥</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!-- 爆炸红心效果 -->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/firework.js"></script>
+<link rel="alternate" href="/atom.xml" title="小马哥" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband">
+    
+    
+<a href="https://your-url" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小马哥</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">因为到过地狱才知道天堂的美好</p>
+
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home  //"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-users"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive //归档"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-fw fa-heartbeat"></i>公益 404</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/59-JS%E4%B8%ADDOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/59-JS%E4%B8%ADDOM%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%BB%91%E5%AE%9A/" class="post-title-link" itemprop="url">59-JS中DOM事件的绑定</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一。事件三要输：事件三要素: 事件源、事件、事件驱动程序。<br>二。事件绑定<br>###注意：事件绑定用节点的时候，不能加括号，直接传函数名。<br>（1）直接给事件源标签的事件属性赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick&#x3D;&quot;alert(&#39;按钮被点击&#39;)&quot;&gt;按钮1&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+
+<p>（2）在事件源标签的事件属性中调用事件驱动程序对应的函数; 事件驱动程序中的this是window对象<br>      (事件驱动程序中没有办法获取事件源)<br>      事件源标签的事件属性赋一个函数调用表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick&#x3D;&quot;func1()&quot;&gt;按钮2&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			function func1()&#123;</span><br><span class="line">				alert(&#39;你好!&#39;)</span><br><span class="line">				alert(&#39;hello!&#39;)</span><br><span class="line">				console.log(this)</span><br><span class="line">&#x2F;&#x2F;打印这个this是windows对象</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<p>（3）给事件源对应的节点的事件属性赋值，赋函数名或者匿名函数; 事件驱动程序中的this是事件源。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id&#x3D;&quot;btn3&quot;&gt;按钮3&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			btn3_ &#x3D; document.getElementById(&#39;btn3&#39;)</span><br><span class="line">			btn3_.onclick &#x3D; function()&#123;</span><br><span class="line">				alert(&#39;按钮3被点击&#39;)</span><br><span class="line">				console.log(this)</span><br><span class="line">			&#125;</span><br><span class="line">			btn3_.onclick &#x3D; function()&#123;</span><br><span class="line">				alert(&#39;新的功能!&#39;)</span><br><span class="line">			&#125;</span><br><span class="line">			btn3_.addEventListener(&#39;click&#39;, function()&#123;</span><br><span class="line">				alert(&#39;新的功能2！&#39;)</span><br><span class="line">			&#125;)</span><br><span class="line">			</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;hr &#x2F;&gt;</span><br><span class="line">		&lt;button class&#x3D;&quot;c1&quot;&gt;按钮41&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;button class&#x3D;&quot;c1&quot;&gt;按钮42&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;button class&#x3D;&quot;c1&quot;&gt;按钮43&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			function c1Action()&#123;</span><br><span class="line">				console.log(this)</span><br><span class="line">				this.style.backgroundColor &#x3D; &#39;red&#39;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			c1s &#x3D; document.getElementsByClassName(&#39;c1&#39;);</span><br><span class="line">			for(c1_ of c1s)&#123;</span><br><span class="line">				c1_.onclick &#x3D; c1Action</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>（4）事件源节点点.addEventListener(事件属性名, 事件驱动程序); 事件驱动程序中的this是事件源
+  注意: 1.事件属性名要驱动最前面的on  2.可以同时给同一个事件源的同一个事件绑定多个事件驱动程序。</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id&#x3D;&quot;btn5&quot;&gt;按钮5&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">			btn5_ &#x3D; document.getElementById(&#39;btn5&#39;)</span><br><span class="line">			btn5_.addEventListener(&#39;click&#39;, function()&#123;</span><br><span class="line">				alert(&#39;按钮5被点击&#39;)</span><br><span class="line">				console.log(this)</span><br><span class="line">			&#125;)</span><br><span class="line">			btn5_.addEventListener(&#39;click&#39;, function()&#123;</span><br><span class="line">				alert(&#39;新功能!&#39;)</span><br><span class="line">			&#125;)</span><br><span class="line">		&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/58-JS-%E4%B8%ADBOM%E7%AA%97%E5%8F%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/58-JS-%E4%B8%ADBOM%E7%AA%97%E5%8F%A3%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">58-JS-中BOM窗口的基本操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>760</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.窗口的基本操作：<br>a. 打开新的窗口  –windows.open()-打开并且返回一个新的空白的窗口。<br>b. windows.open(网页地址) -打开并且返回一个新的指定地址页面的窗口、<br>c. windows.open(网页地址，”  “,”width=,height=”) 打开指定地址的窗口的大小,宽高写在一个引号中是一个参数。<br>d. 窗口对象.close()<br>2.移动窗口<br>a. 窗口对象.moveTo(x坐标，y坐标)<br>3.获取窗口的大小<br>a. 窗口对象.innerHeight /.innerWidth 获取有效的宽高(获取的是显示网页内容的宽高)<br>窗口对象.outerHeight  窗口对象.outerWidth  获取的是整个浏览器的宽高。<br>4.弹窗<br>a. alert(内容)<br>b. confirm(提示信息+确定按钮+取消按钮)–，返回值是选择的结果，如果是true是确定,false是取消。<br>c. prompt(提示信息+输入框+确定按钮+取消按钮)———带输入框的提示框<br>返回值是选择的结果，如果是输入框中的内容，就是点的确定，如果返回值是null点的是取消。<br>5.定时操作<br>(1)setInterval设置周期性的定时器<br>a. setInterval(函数，定时时间)–每个指定时间就执行一次函数。时间单位-毫秒,会创建一个对象并且拿到。<br>b.<br>c. 取消周期性的定时器。<br>d. clearInterval(定时器对象)—关闭指定的定时器对象。(只关闭第一个这种创建的) （关闭Interval的定时器）</p>
+<p>(2) setTimeout(函数，时间)<br>a. –到了指定的时间只执行一次操作、其他与setInterval一样。也是有返回值的。<br>b. –取消一次性定时器操作<br>clearTimeout(定时器对象) –关闭指定定时器。（关闭Timeout的定时器）</p>
+<p>(3)多个定时器是不会相互影响的。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/57-JS-%E4%B8%ADBOM%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/57-JS-%E4%B8%ADBOM%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">57-JS-中BOM基本的操作</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>150</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.什么是BOM<br>    BOM - browser object mode(浏览器对象模型)<br>js内部自动创建了一个window对象，代表当前页面对应的浏览器(窗口)</p>
+<p>2.window对象<br>    声明在js中的所有的变量都是绑定在window对象上的属性</p>
+<p>3.window提供常用的属性和方法<br>    (1)窗口基础操作<br>    (2)弹框<br>    (3)定时</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/56-JS-%E4%B8%ADDOM%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E5%86%85%E5%AE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/56-JS-%E4%B8%ADDOM%E8%8A%82%E7%82%B9%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E5%86%85%E5%AE%B9/" class="post-title-link" itemprop="url">56-JS-中DOM节点的属性和内容</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>694</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.双标签的内容：获取到节点后，节点对应的标签的内容和属性在节点中都会一一对应的。<br>a. 节点.innerText  –获取标签的文本内容  只获取文本。<br>b. 节点.innerText=”新的文本”  修改文本内容  不管赋值的是什么都是文字。<br>c. 节点.innerHTME  —获取标签的内容，如果不是纯文本，获取的不只是文本<br>d. 节点.innerHTML=”新的内容”  — 不会当成文本处理  该是什么就是什么。赋值标签就是标签。<br>2.普通属性：HTML标签中在js节点中都会对应一个一样的属性。</p>
+<p>注意：当我们获得这个节点后  ，img 有的属性  节点都是可以用的。 节点.src  等等。<br>3.  Math.random()  -产生[0-1)的随机小数。<br>parseAInt  转整数<br>parseFloat 转小数<br>4.普通属性<br>HTML标签中所有的属性，在js节点中都会对应一个一样的属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">			_img1 &#x3D; document.getElementById(&#39;img1&#39;)</span><br><span class="line">			console.log(_img1.src)</span><br><span class="line">			_img1.src &#x3D; &#39;img&#x2F;bucket.png&#39;</span><br><span class="line">			_img1.title &#x3D; &#39;酒桶&#39;</span><br><span class="line">			</span><br><span class="line">设置class属性</span><br><span class="line">			_img1.className &#x3D; &#39;c1&#39;</span><br><span class="line">			</span><br><span class="line">设置标签的整体样式</span><br><span class="line">			_p1.style &#x3D; &#39;color:red; font-size:20px;background-color:yellow;&#39;</span><br><span class="line">			单独设置指定样式的指定属性</span><br><span class="line">			_p1.style.width &#x3D; &#39;200px&#39;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/55-JS-%E4%B8%ADDOM%E8%8A%82%E7%82%B9%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%A0%E9%99%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/55-JS-%E4%B8%ADDOM%E8%8A%82%E7%82%B9%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%88%A0%E9%99%A4/" class="post-title-link" itemprop="url">55-JS-中DOM节点的创建和删除</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>423</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.创建节点<br>a. document.createElement(“标签名”) –创建指定标签对应的节点。<br>创建节点是不会显示的也不会被添加到网页中。也不会显示。<br>2.添加节点 （父标签加子节点）<br>a. 节点1.appendChile（节点2）–在节点1的最后添加节点2<br>b. 节点1.insertBefore(节点2，节点3) –在节点1中的节点三的前面插入节点2.<br>3.拷贝节点  -复制一份产生新的。<br>a. 节点1.cloneNode() —拷贝节点1产生新的节点  ，显示需要添加。(浅拷贝)<br>b. 节点1.cloneNode(true) —拷贝节点1产生新的节点  ，显示需要添加。(深拷贝) –拷贝当前标签和标签中的子标签。</p>
+<p>3.删除节点<br>a. 通过父节点删除子节点-父节点.removeChild(子节点)–删除父节点中的子节点。<br>b. 直接删除节点  节点.remove()    –删除指定的节点<br>4.替换节点<br>a. 父节点    节点1.replaceChild(节点2，节点3)–将节点1中的节点3替换成节点2</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/54-JS-%E4%B8%ADDOM%E6%93%8D%E4%BD%9C%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/54-JS-%E4%B8%ADDOM%E6%93%8D%E4%BD%9C%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9/" class="post-title-link" itemprop="url">54-JS-中DOM操作获取节点</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>607</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>节点就是获取这个标签本身。</p>
+<p>1.什么是DOM<br>DOM-document object mode 文档对象模型<br>JS内部自动创建了一个对象，叫document，通过这个对象可以去获取网页中的内容。节点相当于HTML中的div。<br>2.节点操作<br>（1）直接获取节点—在js中获取标签对应的节点。<br>a.  document.getElementById(id属性)–获取HTML中<strong>id</strong>是指定值的标签。返回值是标签对应的节点对象。<br>b.  document.getElementsByClassName(class属性)–获取HTML中<strong>class</strong>指定的所有的标签，返回值是容器。 遍历用   for   of  遍历。  或则for  each(同时获取下标，和值) ， 不要用for  in  。<br>c.  document.getElementsByTagName(标签名) –获取HTML中指定的<strong>标签名</strong>的所有的标签，返回值是容器。<br>d.  document.getElementsByName(name属性名)–获取HTML中<strong>name</strong>属性指定的所有的标签，返回值是容器。 就比如input 中的name。</p>
+<p>2）父子节点-获取节点<br>a. 子节点.parentElement    获取子节点对应的父节点。<br>b. 父节点.children      获取父节点的所有的子节点  —返回值一个或多个。<br>c. 父节点.firstElementChild   获取父节点的第一个子节点。<br>d. 父标签.lastElementChild     获取父节点的最后一个子节点。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/53-js-console-log%E5%92%8Cdocument-write%E7%9A%84%E5%8C%BA%E5%88%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/53-js-console-log%E5%92%8Cdocument-write%E7%9A%84%E5%8C%BA%E5%88%AB/" class="post-title-link" itemprop="url">53-js-console-log和document-write的区别</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>62</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一。<br>console.log用于控制台调试，可以打印对象的内容，而document.write不用于调试，只能打印出对象类型。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/52-js%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/52-js%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">52-js对象</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一。对象<br>1.对象的直接量<br>（1）就是直接创建对象<br>方法：<br>{属性1：属性值1  属性2：属性值2…..}<br>然后赋值给变量。</p>
+<p>p1 = {<br>        name:’小明’,<br>        age: 18,<br>        gender:’男’<br>    }</p>
+<p>（2）构造方法创建：<br>解析：这个就相当于python中的类。<br>构造的本质是函数。<br>与函数不同的是函数里面是<br>a.<strong>this.属性=值</strong><br>b.<strong>返回值是 return this</strong><br>c.<strong>调用方式 是   new  函数名（）</strong></p>
+<p>例如：</p>
+<p> function 函数名/类名(参数列表){<br>         this.属性1 = 值1<br>         this.属性2 = 值2<br>         …<br>         return this<br>     }</p>
+<p>构造方法的调用(创建对象): new 函数名()</p>
+<p>（1）添加属性和方法：<br>this.属性=值    这个值可以是 <strong>函数</strong>。<br>（2）查<br>对象.属性<br>对象[属性名]</p>
+<p>console.log(p1.name, p1[‘age’])<br>console.log(p3.name, p3[‘age’])</p>
+<p>（3）修改对象的属性/和添加对象的属性。</p>
+<p>对象.属性 = 值     -   属性如果存在就是修改，属性不存在就是添加<br>对象[属性名] = 值   -   属性如果存在就是修改，属性不存在就是添加</p>
+<p><strong>点语法    和   对象[属性名] 的方式都是可以修改和增加的。</strong></p>
+<p>（4）添加属性和方法<br>类名.prototype.属性名 = 值    - 给指定的类添加属性和方法</p>
+<p>Person.prototype.abc = 100<br>console.log(p4.abc, p4[‘abc’])</p>
+<p>p5 = new Person(‘大黄’, 3)<br>console.log(p5.abc)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender=<span class="string">'男'</span></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//===对象属性====</span></span><br><span class="line">		<span class="keyword">this</span>.name = name</span><br><span class="line">		<span class="keyword">this</span>.age = age</span><br><span class="line">		<span class="keyword">this</span>.gender = gender</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//===对象方法====</span></span><br><span class="line">		<span class="keyword">this</span>.eat = <span class="function"><span class="keyword">function</span>(<span class="params">food</span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">'在吃'</span>+food)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">this</span>.study = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">'在学习'</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>类名.prototype.属性名 = 值  给指定的类添加新的属性和方法。</p>
+<p>解析：这个用于不能拿到原码的类添加新的功能。<br>比如下面的对js中的String添加首字母变成大写的类的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">String</span>.prototype.myToUpper = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//'a' &lt;= char &lt;= 'z'(python)  -&gt; char &gt;= 'a' &amp;&amp; char &lt;= 'z'</span></span><br><span class="line">		tChar = <span class="keyword">this</span>[<span class="number">0</span>]</span><br><span class="line">		<span class="keyword">if</span>(tChar&gt;=<span class="string">'a'</span> &amp;&amp; tChar &lt;= <span class="string">'z'</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> tChar.toUpperCase()+<span class="keyword">this</span>.slice(<span class="number">1</span>)</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	str1 = <span class="string">'abc'</span></span><br><span class="line">	<span class="built_in">console</span>.log(str1.myToUpper())</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/51%E3%80%81js%E6%95%B0%E7%BB%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/51%E3%80%81js%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">51、js数组</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>441</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一。数组（python中的列表）<br>1.数组的增删改查<br>（1）查<br>数组[下标]   -  获取指定下标对应的元素，如果下标不存在返回undefined。<br>遍历： for-in（取到的是下标）    for-of（值）</p>
+<p>（2）增<br> 数组[下标] = 值  – 下标不存在的时候会添加元素<br>数组.push(元素)— 在数组的最后添加一个元素<br>数组.unshift(元素)   – 在数组的最前面添加一个元素</p>
+<p>数组.splice(下标,0,元素1,元素2,元素3,…)  - 在指定下标前插入指定一个或者多个元素</p>
+<p>str=[1,2,3,4,5]<br>    str.splice(2,0,”woshicharude “)<br>    console.log(str)<br>解析：这个就是在 下标识2  就是“3”的前面插入指定的。<br>0: 1<br>1: 2<br>2: “woshicharude “<br>3: 3<br>4: 4<br>5: 5</p>
+<p>（3）删</p>
+<p> 数组.splice(下标, N)     - 从数组指定下标开始，删除N个元素。<br><strong>这个是包括开始的这个下标的。</strong></p>
+<p>数组.pop()  -  取出数组中最后一个元素</p>
+<p>数组.shift() - 取出数组中第一个元素<br>（4）改<br>数组[下标]=值</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mayu123mayu.github.io/2020/01/05/50-js%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kebi.jpg">
+      <meta itemprop="name" content="2m雨天">
+      <meta itemprop="description" content="菜鸟的编程自学之路">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小马哥">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/05/50-js%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">50-js字符串</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-01-05 12:31:52 / 修改时间：12:16:43" itemprop="dateCreated datePublished" datetime="2020-01-05T12:31:52+08:00">2020-01-05</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>921</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一，字符串的方法及应用<br>1.增删改查切片等<br>（1）获取字符<br> 字符串[下标]</p>
+<p>注意：js中的下标范围是0~长度-1  没有负数的下标。<br>（2）字符串加法运算(不支持乘法运算)<br>注意：在js中字符串可以和任何类型的数据进行加法。<strong>没有数据类型的限制</strong>，<strong>都是字符串的拼接</strong>。<br>（3）字符串长度</p>
+<p>字符串.length<br>（4）切片<br>字符串.slice(开始下标，结束下标)<br><strong>取头不取尾</strong><br>（5）替换<br>字符串.replace（原来的，替换的）<br>注意：js中的正则表达式写在两个//之间。</p>
+<p>（6）切割<br>字符串.split(用什么切割)</p>
+<p>（7）正则匹配<br>正则对象.test(字符串)–判断字符串和正则表达式是否匹配，结果是布尔。</p>
+<p>re = /^1[3-9]\d{9}$/<br>    console.log(re.test(‘11273828333’))</p>
+<p>正则字符串匹配电话号码。<br>（8）排序<br>数组.sort(函数)<br>注意：传入的函数必须带有两个参数，如果是返回值如果item1 - imem2<br>排序是从小到大。<br>item2-item1  排序是从大到小。</p>
+<p>（9）数组.join(字符串)</p>
+<p> 用字符串将数组中元素拼接在一个产生一个新的字符串</p>
+<p>（10）数组.forEach(函数)</p>
+<p>array1 = [123, ‘小明’, true]<br>    array1.forEach(function(item, index){<br>        console.log(item, index)<br>    })</p>
+<p><strong>注意：函数必须有两个参数，这个参数的值就是这个数组的下标和对应的值。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nums = [<span class="number">23</span>, <span class="number">9</span>, <span class="number">78</span>, <span class="number">67</span>]</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params">item1, item2</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> item2 - item1</span><br><span class="line">	&#125;</span><br><span class="line">	nums.sort(func1)</span><br><span class="line">	<span class="built_in">console</span>.log(nums)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">str5 = <span class="string">'hellol jslll'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str5.slice(<span class="number">1</span>, <span class="number">4</span>))   <span class="comment">//str5[1:4]  -&gt; ell</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str5.replace(<span class="regexp">/l+/g</span>, <span class="string">'A'</span>))</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">'abc 123 true'</span>.split(<span class="string">' '</span>))</span><br><span class="line"></span><br><span class="line">re = <span class="regexp">/^1[3-9]\d&#123;9&#125;$/</span></span><br><span class="line">	<span class="built_in">console</span>.log(re.test(<span class="string">'11273828333'</span>))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="2m雨天"
+      src="/images/kebi.jpg">
+  <p class="site-author-name" itemprop="name">2m雨天</p>
+  <div class="site-description" itemprop="description">菜鸟的编程自学之路</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-google"></i>Google</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://youtube.com/yourname" title="YouTube → https:&#x2F;&#x2F;youtube.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+      </span>
+  </div>
+
+
+
+        <div style="">
+  <canvas id="canvas" style="width:60%;">当前浏览器不支持canvas，请更换浏览器后再试</canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f00';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+  <div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=32703006&auto=1&height=66"></iframe>
+  
+  </div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">2m雨天</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">178k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:42</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+    <script defer src="/lib/three/canvas_sphere.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+
+
+<script type="text/javascript"
+color="255,0,0" opacity='0.4' zIndex="-2" count="300" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
+  <script type="text/javascript" src="/js/src/clicksocialvalue.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
